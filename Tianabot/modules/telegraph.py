@@ -34,7 +34,7 @@ async def telegrap(event):
             if not downloaded_file_name:
                 await Client.send_message(
                     event.chat_id,
-                    "Not Supported Format Media!"
+                    "Tidak Mendukung Format Media!"
                 )
                 return
             else:
@@ -52,11 +52,11 @@ async def telegrap(event):
                     os.remove(downloaded_file_name)
                     await Client.send_message(
                         event.chat_id,
-                        "Your telegraph is complete uploaded!",
+                        "Telegraphmu berhasil diunggah!",
                         buttons=[
                             [
                                 types.KeyboardButtonUrl(
-                                    "➡ View Telegraph", "https://telegra.ph{}".format(media_urls[0], (ms + ms_two))
+                                    "➡ Lihat Telegraph", "https://telegra.ph{}".format(media_urls[0], (ms + ms_two))
                                 )
                             ]
                         ]
@@ -74,7 +74,7 @@ async def telegrap(event):
                 else:
                     await Client.send_message(
                         event.chat_id,
-                        "Not Supported Format Text!"
+                        "Tidak Mendukung Format Teks!"
                     )
                 downloaded_file_name = await Client.download_media(
                     reply_msg,
@@ -95,17 +95,17 @@ async def telegrap(event):
             ms = (end - start).seconds
             await Client.send_message(
                     event.chat_id,
-                    "Your telegraph is complete uploaded!",
+                    "Telegraphmu berhasil diunggah!",
                     buttons=[
                         [
                             types.KeyboardButtonUrl(
-                                "➡ View Telegraph", "https://telegra.ph/{}".format(response["path"], ms)
+                                "➡ Lihat Telegraph", "https://telegra.ph/{}".format(response["path"], ms)
                             )
                         ]
                     ]
                 )
     else:
-        await event.reply("Reply to a message to get a permanent telegra.ph link.")
+        await event.reply("Balas ke pesan untuk mendapatkan tautan telegra.ph permanen.")
 
 
 def resize_image(image):
