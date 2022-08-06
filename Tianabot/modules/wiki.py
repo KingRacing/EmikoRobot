@@ -22,7 +22,7 @@ def wiki(update: Update, context: CallbackContext):
         res = wikipedia.summary(search)
     except DisambiguationError as e:
         update.message.reply_text(
-            "Disambiguated pages found! Adjust your query accordingly.\n<i>{}</i>".format(
+            "Halaman tersamar ditemukan! Sesuaikan kueri Anda sesuai.\n<i>{}</i>".format(
                 e
             ),
             parse_mode=ParseMode.HTML,
@@ -34,7 +34,7 @@ def wiki(update: Update, context: CallbackContext):
     if res:
         result = f"<b>{search}</b>\n\n"
         result += f"<i>{res}</i>\n"
-        result += f"""<a href="https://en.wikipedia.org/wiki/{search.replace(" ", "%20")}">Read more...</a>"""
+        result += f"""<a href="https://en.wikipedia.org/wiki/{search.replace(" ", "%20")}">Baca selebihnya...</a>"""
         if len(result) > 4000:
             with open("result.txt", "w") as f:
                 f.write(f"{result}\n\nUwU OwO OmO UmU")
