@@ -82,13 +82,13 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*Hᴇʟʟᴏ {} * [!]({})
+*Halo {} * [!]({})
 ───────────────────────
-× *I'ᴍ Aɴɪᴍᴇ-Tʜᴇᴍᴇ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
-× *I'ᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Fᴇᴀᴛᴜʀᴇꜱ!*
+× *Saya Adalah Bot Untuk Mengatur Grupmu*
+× *Saya Sangat daCepat dan Lebih efisien Saya menyediakan fitur luar biasa!*
 ───────────────────────
-× *Uᴘᴛɪᴍᴇ:* `{}`
-× `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
+× *Uptime:* `{}`
+× `{}` *Pengguna, Aᴄʀᴏꜱꜱ* `{}` *Obrolan.*
 ───────────────────────"""
 
 buttons = [
@@ -113,7 +113,7 @@ TIANA_IMG = f"{START_IMG}"
 TIANA_VIDA = f"{BOT_TUT}"
 TIANA_VIDB = f"{MUSICBOT_TUT}"
 
-HELP_STRINGS = """*Click on the Buttons Bellow to get Documention about Specific Modules*"""
+HELP_STRINGS = """*Klik tombol dibawah ini untuk mendapatkan dokumentasi tentang spesifikasi Modul*"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -201,7 +201,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="⬅️ KEMBALI", callback_data="help_back")]]
                     ),
                 )
 
@@ -801,7 +801,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Help",
+                                text="Bantuan",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -838,7 +838,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="tiana_")]]
+                [[InlineKeyboardButton(text="Kembali", callback_data="tiana_")]]
             ),
         )
 
@@ -911,7 +911,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="Kembali",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -980,14 +980,14 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
+            text = "Klik di sini untuk mendapatkan pengaturan obrolan ini, serta pengaturan Anda."
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="Settings",
+                                text="Pengaturan",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -997,7 +997,7 @@ def get_settings(update: Update, context: CallbackContext):
                 ),
             )
         else:
-            text = "Click here to check your settings."
+            text = "Klik Disini Untuk Melihat Pengaturanmu."
 
     else:
         send_settings(chat.id, user.id, True)
@@ -1010,10 +1010,10 @@ def donate(update: Update, context: CallbackContext):
     bot = context.bot
     if chat.type == "private":
         update.effective_message.reply_text(
-            text = "𝙔𝙤𝙪 𝘾𝙖𝙣 𝘿𝙤𝙣𝙖𝙩𝙚 𝙈𝙚 𝙃𝙚𝙧𝙚", parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
+            text = "𝗔𝗻𝗱𝗮 𝗗𝗮𝗽𝗮𝘁 𝗗𝗼𝗻𝗮𝘀𝗶 𝗦𝗮𝘆𝗮 𝗗𝗶 𝗦𝗶𝗻𝗶", parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
                [
                  [                   
-                    InlineKeyboardButton(text="Dᴏɴᴀᴛᴇ Mᴇ", url=f"{DONATION_LINK}"),
+                    InlineKeyboardButton(text="𝐃𝐨𝐧𝐚𝐬𝐢 𝐊𝐞 𝐒𝐚𝐲𝐚", url=f"{DONATION_LINK}"),
                  ]
                ]
         )
@@ -1022,13 +1022,13 @@ def donate(update: Update, context: CallbackContext):
         try:
             bot.send_message(
                 user.id,
-                text = "𝙔𝙤𝙪 𝘾𝙖𝙣 𝘿𝙤𝙣𝙖𝙩𝙚 𝙈𝙚 𝙃𝙚𝙧𝙚" ,
+                text = "𝗔𝗻𝗱𝗮 𝗗𝗮𝗽𝗮𝘁 𝗗𝗼𝗻𝗮𝘀𝗶 𝗦𝗮𝘆𝗮 𝗗𝗶 𝗦𝗶𝗻𝗶" ,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                [
                  [                   
-                    InlineKeyboardButton(text="Dᴏɴᴀᴛᴇ Mᴇ", url=f"{DONATION_LINK}"),
+                    InlineKeyboardButton(text="𝐃𝐨𝐧𝐚𝐬𝐢 𝐊𝐞 𝐒𝐚𝐲𝐚", url=f"{DONATION_LINK}"),
                  ]
                ]
              )
@@ -1066,7 +1066,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "𝙏𝙞𝙖𝙣𝙖𝘽𝙤𝙩 𝙐𝙥𝙙𝙖𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮✅")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "𝐄𝐢𝐤𝐨𝐁𝐨𝐭 𝐁𝐞𝐫𝐡𝐚𝐬𝐢𝐥 𝐃𝐢𝐩𝐞𝐫𝐛𝐚𝐫𝐮𝐢✅")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
