@@ -17,12 +17,12 @@ async def make_carbon(code):
 @capture_err
 async def carbon_func(_, message):
     if not message.reply_to_message:
-        return await message.reply_text("`Rᴇᴩʟʏ Tᴏ A Tᴇxᴛ Tᴏ Gᴇɴᴇʀᴀᴛᴇ Cᴀʀʙᴏɴ.`")
+        return await message.reply_text("`Balas ke pesan untuk menghasilkan carbon.`")
     if not message.reply_to_message.text:
-        return await message.reply_text("`Rᴇᴩʟʏ Tᴏ A Tᴇxᴛ Tᴏ Gᴇɴᴇʀᴀᴛᴇ Cᴀʀʙᴏɴ.`")
-    m = await message.reply_text("`Gᴇɴᴇʀᴀᴛɪɴɢ Cᴀʀʙᴏɴ...`")
+        return await message.reply_text("`Balas ke pesan untuk menghasilkan carbon.`")
+    m = await message.reply_text("`Menghasilkan Carbon...`")
     carbon = await make_carbon(message.reply_to_message.text)
-    await m.edit("`Uᴩʟᴏᴀᴅɪɴɢ Gᴇɴᴇʀᴀᴛᴇᴅ Cᴀʀʙᴏɴ...`")
+    await m.edit("`Mengunggah Carbon...`")
     await pbot.send_photo(message.chat.id, carbon)
     await m.delete()
     carbon.close()
