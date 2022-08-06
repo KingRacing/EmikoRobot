@@ -34,14 +34,14 @@ async def github(_, message):
                 caption = f"""**Info Of {name}**
 **Username:** `{username}`
 **Bio:** `{bio}`
-**Profile Link:** [Here]({url})
-**Company:** `{company}`
-**Created On:** `{created_at}`
-**Repositories:** `{repositories}`
+**Tautan Profil:** [Here]({url})
+**Perusahaan:** `{company}`
+**Dibuat pada:** `{created_at}`
+**Repositori:** `{repositories}`
 **Blog:** `{blog}`
-**Location:** `{location}`
-**Followers:** `{followers}`
-**Following:** `{following}`"""
+**Lokasi:** `{location}`
+**Pengikut:** `{followers}`
+**Yang Diikuti:** `{following}`"""
             except Exception as e:
                 print(str(e))
                 pass
