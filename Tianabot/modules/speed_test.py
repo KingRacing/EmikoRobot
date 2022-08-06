@@ -20,7 +20,7 @@ def speedtestxyz(update: Update, context: CallbackContext):
         ]
     ]
     update.effective_message.reply_text(
-        "Select Ping Mode", reply_markup=InlineKeyboardMarkup(buttons)
+        "Pilih Mode Ping", reply_markup=InlineKeyboardMarkup(buttons)
     )
 
 
@@ -34,7 +34,7 @@ def speedtestxyz_callback(update: Update, context: CallbackContext):
         speed.get_best_server()
         speed.download()
         speed.upload()
-        replymsg = "Ping Result:"
+        replymsg = "Hasil Ping:"
 
         if query.data == "speedtest_image":
             speedtest_image = speed.results.share()
@@ -45,10 +45,10 @@ def speedtestxyz_callback(update: Update, context: CallbackContext):
 
         elif query.data == "speedtest_text":
             result = speed.results.dict()
-            replymsg += f"\nDownload: `{convert(result['download'])}Mb/s`\nUpload: `{convert(result['upload'])}Mb/s`\nPing: `{result['ping']}`"
+            replymsg += f"\nUnduhan: `{convert(result['download'])}Mb/s`\nUnggahan: `{convert(result['upload'])}Mb/s`\nPing: `{result['ping']}`"
             update.effective_message.edit_text(replymsg, parse_mode=ParseMode.MARKDOWN)
     else:
-        query.answer("You are required to join Heroes Association to use this command.")
+        query.answer("Anda harus bergabung dengan Asosiasi Pahlawan untuk menggunakan perintah ini.")
 
 
 SPEED_TEST_HANDLER = DisableAbleCommandHandler("ping", speedtestxyz)
