@@ -4,17 +4,17 @@
     A Telegram Powerfull Group Managment Bot written in Python using Pyrogram and Telethon.
 </h4>
 <p align="center">
-    <a href="https://t.me/Tiana_Prince_Bot"> Ready-To-Use Bot </a> •
+    <a href="https://t.me/EikoManager_Bot"> Ready-To-Use Bot </a> •
     <a href="http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1"> Documentation </a> •
-    <a href="https://t.me/TianaxUpdates"> Update Channel </a> •
-    <a href="https://t.me/TianaxSupport"> Support Chat </a> 
+    <a href="https://t.me/CatatanAz"> Update Channel </a> •
+    <a href="https://t.me/CatatanAzDay"> Support Chat </a> 
 </p>
     
-# Tiana Bot
-#### Tiana is a Telegram group managment bot made using Telethon and Pyrogram which makes it modern and faster than most of the exisitng Telegram Chat Managers.
+# Eiko Bot
+#### Eiko is a Telegram group managment bot made using Telethon and Pyrogram which makes it modern and faster than most of the exisitng Telegram Chat Managers.
 <p align="center"><img src="https://telegra.ph/file/fae3dd2a2c6e491e4893e.jpg"></p>
 
-#### Tiana's features over other bots:
+#### Eiko's features over other bots:
 - Modern
 - Fast
 - Fully open-source
@@ -25,7 +25,7 @@
 - Smart Ai System
 - Easy To Use
 
-Can be found on Telegram as [@TianaRobot](https://t.me/TIANA_PRINCE_BOT)
+Can be found on Telegram as [Eiko](https://t.me/EikoManager_Bot)
 
 ## Deployment
 First Step!
@@ -58,8 +58,8 @@ Read [Docs](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) for Detailed D
 <h4>Click the button below to deploy Tiana Group Managment Bot on Heroku!</h4>    
 <p><a href="https://heroku.com/deploy?template=https://github.com/Prince-Botz/TianaBot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
-<h4>Click the button below to deploy Tiana Music Bot on Heroku!</h4>    
-<p><a href="https://heroku.com/deploy?template=https://github.com/Prince301102/Tiana-Music"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p> 
+<h4>Click the button below to deploy Eiko Music Bot on Heroku!</h4>    
+<p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/Musikku"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p> 
 </details>
 
 <details>
