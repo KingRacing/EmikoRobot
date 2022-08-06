@@ -1,4 +1,4 @@
-<p align="center"><img src="https://telegra.ph/file/8edbffafac3e7f3e8ad10.jpg"></p>
+<p align="center"><img src="https://telegra.ph/file/b2d68d6217bceb7eaa3a7.jpg"></p>
 
 <h4 align="center">
     A Telegram Powerfull Group Managment Bot written in Python using Pyrogram and Telethon.
@@ -12,7 +12,7 @@
     
 # Eiko Bot
 #### Eiko is a Telegram group managment bot made using Telethon and Pyrogram which makes it modern and faster than most of the exisitng Telegram Chat Managers.
-<p align="center"><img src="https://telegra.ph/file/fae3dd2a2c6e491e4893e.jpg"></p>
+<p align="center"><img src="https://telegra.ph/file/22fdd1bbe77bc86669b5d.jpg"></p>
 
 #### Eiko's features over other bots:
 - Modern
@@ -56,7 +56,7 @@ Read [Docs](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) for Detailed D
 > Those two vars are not Mandatory! You can leave them blank too. 
     
 <h4>Click the button below to deploy Tiana Group Managment Bot on Heroku!</h4>    
-<p><a href="https://heroku.com/deploy?template=https://github.com/Prince-Botz/TianaBot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/EikoRobot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 <h4>Click the button below to deploy Eiko Music Bot on Heroku!</h4>    
 <p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/Musikku"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p> 
@@ -68,7 +68,7 @@ Read [Docs](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) for Detailed D
 
 
 ```console
-$ git clone https://github.com/Prince-Botz/TianaBot
+$ git clone https://github.com/EmiliaTzy/EikoRobot
 $ cd TianaBot
 $ pip3 install -U -r requirements.txt
 $ cp sample.env .env
@@ -82,9 +82,9 @@ $ bash start
 
 ## Contact & Support
 
-- [Telegram Channel](https://t.me/TianaxUpdates)
-- [Telegram Support Group](https://t.me/TianaxSupport)
-- [Contact Owner](https://t.me/PrincexAssistantBot)
+- [Telegram Channel](https://t.me/CatatanAz)
+- [Telegram Support Group](https://t.me/CatatanAzDay)
+- [Contact Owner](https://t.me/tth_kiya98)
 
 ## License
 
