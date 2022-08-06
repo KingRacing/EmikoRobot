@@ -125,7 +125,7 @@ async def _(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
             await event.reply(
-                "Maaf, kamu bukan admin disini. Kamu tidak dapat menggunakan perintah ini, tapi kamu bisa menggunakannya lewat pm 🙂""
+                "Maaf, kamu bukan admin disini. Kamu tidak dapat menggunakan perintah ini, tapi kamu bisa menggunakannya lewat pm 🙂"
             )
             return
 
