@@ -177,7 +177,7 @@ ADD_CHAT_HANDLER = CallbackQueryHandler(merissaadd, pattern=r"add_chat")
 RM_CHAT_HANDLER = CallbackQueryHandler(merissarm, pattern=r"rm_chat")
 CHATBOT_HANDLER = MessageHandler(
     Filters.text
-    & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
+    & (~Filters.regex(r"#[\s]+") & ~Filters.regex(r"!") & ~Filters.regex(r"\/")),
     chatbot,
 )
 LIST_ALL_CHATS_HANDLER = CommandHandler(
