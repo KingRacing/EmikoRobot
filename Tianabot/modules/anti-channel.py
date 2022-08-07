@@ -13,16 +13,16 @@ async def channel_toggle(db, message: Message):
     if status == "on":
         if chat_id not in db:
             db.append(chat_id)
-            text = "**Anti Channel Mode `enabled` ✅. I will delete all message that send with channel names. Dare to leap**"
+            text = "**Mode Anti Channel `diaktifkan` ✅. Saya akan menghapus semua pesan yang dikirim dengan nama saluran.**"
             return await eor(message, text=text)
-        await eor(message, text="antichannel Is Already Enabled.")
+        await eor(message, text="antichannel telah Diaktifkan.")
     elif status == "off":
         if chat_id in db:
             db.remove(chat_id)
-            return await eor(message, text="antichannel Disabled!")
-        await eor(message, text=f"**Anti Channel Mode Successfully Deactivated In The Chat** {message.chat.id} ❌")
+            return await eor(message, text="antichannel Dinonaktifkan!")
+        await eor(message, text=f"**Mode Anti Channel Berhasil dinonaktifkan di obrolan** {message.chat.id} ❌")
     else:
-        await eor(message, text="I undestand `/antichannel on` and `/antichannel off` only")
+        await eor(message, text="Saya hanya faham `/antichannel on` dan `/antichannel off` saja")
 
 
 # Enabled | Disable antichannel
@@ -32,7 +32,7 @@ async def channel_toggle(db, message: Message):
 @capture_err
 async def antichannel_status(_, message: Message):
     if len(message.command) != 2:
-        return await eor(message, text="I undestand `/antichannel on` and `/antichannel off` only")
+        return await eor(message, text="Saya hanya faham `/antichannel on` dan `/antichannel off` saja")
     await channel_toggle(active_channel, message)
 
 
@@ -59,22 +59,22 @@ async def anitchnl(_, message):
         return
     else:
         await message.delete()
-        ti = await message.reply_text("**A anti-channel message detected. I deleted it..!**")
+        ti = await message.reply_text("**Pesan anti channel terdeteksi. Saya menghapusnya..!**")
         await asyncio.sleep(7)
         await ti.delete()        
 
 __mod_name__ = "Aɴᴛɪ-Cʜᴀɴɴᴇʟ"
 __help__ = """
-your groups to stop anonymous channels sending messages into your chats.
-**Type of messages**
-        - document
-        - photo
-        - sticker
-        - animation
+Grup Anda untuk menghentikan saluran anonim mengirim pesan ke obrolan Anda. 
+**Tipe pesan**
+        - dokumen
+        - foto
+        - stiker
+        - animasi
         - video
-        - text
+        - teks
         
-**Admin Commands:**
- - /antichannel [on / off] - Anti- channel  function 
-**Note** : If linked channel  send any containing characters in this type when on  function no del    
+**Perintah Admin:**
+ - /antichannel [on / off] - Fungsi Anti channel
+**Catatan** : Jika saluran tertaut, kirim karakter yang berisi apa pun dalam jenis ini saat pada fungsi no del
  """
