@@ -26,7 +26,7 @@ async def _(event):
         lan, text = input_str.split("|")
     else:
         await event.reply(
-            "Invalid Syntax\nFormat `/tts lang | text`\nFor eg: `/tts en | hello`"
+            "Tidak valid\nFormat `/tts lang | text`\nFor eg: `/tts en | hello`"
         )
         return
     text = text.strip()
@@ -42,13 +42,13 @@ async def _(event):
         )
         return
     except ValueError:
-        await event.reply("Language is not supported.")
+        await event.reply("Bahasa tidak didukung.")
         return
     except RuntimeError:
-        await event.reply("Error loading the languages dictionary.")
+        await event.reply("Kesalahan memuat kamus bahasa.")
         return
     except gTTSError:
-        await event.reply("Error in Google Text-to-Speech API request !")
+        await event.reply("Kesalahan di permintaan Google Text-to-Speech API !")
         return
     with open("k.mp3", "r"):
         await tbot.send_file(
