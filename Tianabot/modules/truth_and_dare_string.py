@@ -15,7 +15,7 @@ TRUTH = (
     "Di antara kita, siapa orang yang paling kamu suka dalam konteks romantis?"
     "Di antara kita, siapa orang yang menurutmu paling baik dan paling buruk sifatnya?"
     "Siapa mantan terindahmu?"
-    "Siapa orang yang ingin kamu jadikan istri/suami?
+    "Siapa orang yang ingin kamu jadikan istri/suami?"
     "Apakah kamu pernah melakukan ghosting?"
     "Apa penyesalan terburukmu?"
     "Berapa jumlah mantanmu?"
@@ -33,7 +33,7 @@ DARE = (
     "Tirukan seorang selebriti sampai ada yang bisa menebak."
     "Pesan makanan secara online dan buat pesanan tersebut diberikan kembali kepada driver yang mengantarkan pesanan yang sudah kamu bayar."
     "Pilih seseorang digrup dengan nickname awalan E menjadi bestiemu."
-    "Gunakan penutup mata lalu raba muka salah satu di antara kita sampai kamu bisa menebak siapa orang itu.
+    "Gunakan penutup mata lalu raba muka salah satu di antara kita sampai kamu bisa menebak siapa orang itu."
     "Ungkapkan perasaanmu kepada bestiemu digrup."
     "Spam kata ayang digrup sampai 20 kali."
     "Gunakan Kata Sayang disetiap pesan yang kamu kirim digrup."
