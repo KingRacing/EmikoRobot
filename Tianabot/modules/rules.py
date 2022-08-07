@@ -30,18 +30,18 @@ def send_rules(update, chat_id, from_pm=False):
     try:
         chat = bot.get_chat(chat_id)
     except BadRequest as excp:
-        if excp.message == "Chat not found" and from_pm:
+        if excp.message == "Obrolan tidak ditemukan" and from_pm:
             bot.send_message(
                 user.id,
-                "The rules shortcut for this chat hasn't been set properly! Ask admins to "
-                "fix this.\nMaybe they forgot the hyphen in ID",
+                "Pintasan aturan untuk obrolan ini belum disetel dengan benar!  Minta admin untuk "
+                "perbaiki ini.\nMungkin mereka lupa tanda hubung di ID",
             )
             return
         else:
             raise
 
     rules = sql.get_rules(chat_id)
-    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+    text = f"Aturan untuk *{escape_markdown(chat.title)}* adalah:\n\n{rules}"
 
     if from_pm and rules:
         bot.send_message(
@@ -50,17 +50,17 @@ def send_rules(update, chat_id, from_pm=False):
     elif from_pm:
         bot.send_message(
             user.id,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "Admin grup belum menetapkan aturan apa pun untuk obrolan ini. "
+            "Ini mungkin tidak berarti itu melanggar hukum...!",
         )
     elif rules:
         update.effective_message.reply_text(
-            "Please click the button below to see the rules.",
+            "Silakan klik tombol di bawah ini untuk melihat aturannya.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Rules", url=f"t.me/{bot.username}?start={chat_id}"
+                            text="Aturan", url=f"t.me/{bot.username}?start={chat_id}"
                         )
                     ]
                 ]
@@ -68,8 +68,8 @@ def send_rules(update, chat_id, from_pm=False):
         )
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!"
+            "Admin grup belum menetapkan aturan apa pun untuk obrolan ini. "
+             "Ini mungkin tidak berarti itu melanggar hukum...!"
         )
 
 
@@ -88,7 +88,7 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Successfully set rules for this group.")
+        update.effective_message.reply_text("Berhasil Membuat aturan di grup.")
 
 
 @run_async
@@ -96,11 +96,11 @@ def set_rules(update: Update, context: CallbackContext):
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     sql.set_rules(chat_id, "")
-    update.effective_message.reply_text("Successfully cleared rules!")
+    update.effective_message.reply_text("Berhasil menghapus aturan!")
 
 
 def __stats__():
-    return f"• {sql.num_chats()} chats have rules set."
+    return f"• {sql.num_chats()} obrolan memiliki aturan yang ditetapkan."
 
 
 def __import_data__(chat_id, data):
@@ -114,7 +114,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
 def __chat_settings__(chat_id, user_id):
-    return f"This chat has had it's rules set: `{bool(sql.get_rules(chat_id))}`"
+    return f"Obrolan ini telah menetapkan aturannya: `{bool(sql.get_rules(chat_id))}`"
 
 
 GET_RULES_HANDLER = CommandHandler("rules", get_rules, filters=Filters.group)
