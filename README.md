@@ -1,7 +1,7 @@
 <p align="center"><img src="https://telegra.ph/file/b2d68d6217bceb7eaa3a7.jpg"></p>
 
 <h4 align="center">
-    A Telegram Powerfull Group Managment Bot written in Python using Pyrogram and Telethon.
+    Bot Manajemen Grup Telegram Powerfull yang ditulis dengan Python menggunakan Pyrogram dan Telethon.
 </h4>
 <p align="center">
     <a href="https://t.me/EikoManager_Bot"> Ready-To-Use Bot </a> •
@@ -11,31 +11,31 @@
 </p>
     
 # Eiko Bot
-#### Eiko is a Telegram group managment bot made using Telethon and Pyrogram which makes it modern and faster than most of the exisitng Telegram Chat Managers.
+#### Eiko adalah bot manajemen grup Telegram yang dibuat menggunakan Telethon dan Pyrogram yang membuatnya modern dan lebih cepat daripada kebanyakan Manajer Obrolan Telegram yang ada.
 <p align="center"><img src="https://telegra.ph/file/22fdd1bbe77bc86669b5d.jpg"></p>
 
-#### Eiko's features over other bots:
-- Modern
-- Fast
-- Fully open-source
-- Frequently updated
-- Multi Language Support [Soon]
-- Advanced Federation System With Buttons
-- Advanced Api
-- Smart Ai System
-- Easy To Use
+#### Fitur Eiko dibandingkan bot lain:
+ - Modern
+ - Cepat
+ - Sumber terbuka sepenuhnya
+ - Sering diperbarui
+ - Menggunakan Bahasa Indonesia (Dalam Tahap Proses) 
+ - Sistem Federasi Lanjutan Dengan Tombol
+ - Api Tingkat Lanjut
+ - Sistem Ai Cerdas
+ - Mudah digunakan
 
-Can be found on Telegram as [Eiko](https://t.me/EikoManager_Bot)
+Dapat Menemukan Saya Sebagai [Eiko](https://t.me/EikoManager_Bot)
 
 ## Deployment
-First Step!
+Langkah Pertama!
 
-Star ⭐ the repository!!
-It really motivates me to continue this project further
+Beri ⭐ Untuk Repositori!!
+Itu benar-benar memotivasi saya untuk melanjutkan proyek ini lebih lanjut
 
-Read [Docs](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) for Detailed Description and Setup Guide on deploying Bot.
+Baca [Dokumen](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) untuk Deskripsi Detail dan Panduan Penyiapan tentang Deploy Bot.
 
-> Click on buttons to expand!
+> Klik Tombol dibawah ini untuk menyebarkan!
 <details>
 <summary><b>🔗 Requirements</b></summary>
 <br>
@@ -48,49 +48,49 @@ Read [Docs](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) for Detailed D
 </details>
 
 <details>
-<summary><b>🔗 Deploy to Heroku</b></summary>
+<summary><b>🔗 Deploy ke Heroku</b></summary>
 <br>
 
-> Heroku has two vars[ HEROKU_API_KEY & HEROKU_APP_NAME ] for Updater to work. 
-> By setting those two vars you can get logs of your heroku app, set var, edit var, delete vars , check dyno usage and update bot. 
-> Those two vars are not Mandatory! You can leave them blank too. 
+> Heroku memiliki dua vars[ HEROKU_API_KEY & HEROKU_APP_NAME ] dalam proses update. 
+> Dengan mengatur kedua vars tersebut, Anda bisa mendapatkan log aplikasi heroku Anda, mengatur var, mengedit var, menghapus vars, memeriksa penggunaan dyno dan memperbarui bot.
+> Kedua var itu tidak Wajib!  Anda dapat membiarkannya kosong juga. 
     
-<h4>Click the button below to deploy Tiana Group Managment Bot on Heroku!</h4>    
+<h4>Klik tombol dibawah ini untuk deploy bot manajemen eiko dari Heroku!</h4>    
 <p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/EikoRobot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
-<h4>Click the button below to deploy Eiko Music Bot on Heroku!</h4>    
+<h4>Klik tombol dibawah ini untuk deploy bot music eiko dari Heroku!</h4>    
 <p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/Musikku"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p> 
 </details>
 
 <details>
-<summary><b>🔗 Deploy to VPS</b></summary>
+<summary><b>🔗 Deploy ke VPS</b></summary>
 <br>
 
 
-```console
+```Konsol
 $ git clone https://github.com/EmiliaTzy/EikoRobot
 $ cd TianaBot
 $ pip3 install -U -r requirements.txt
 $ cp sample.env .env
 ```
-> Edit .env with your values and then start bot with
-```console
+> Edit .env dengan nilai mu dan kemudian mulai bot dengan
+```konsol
 $ bash start
 ```
 
 </details>
 
-## Contact & Support
+## Kontak & Dukungan
 
 - [Telegram Channel](https://t.me/CatatanAz)
 - [Telegram Support Group](https://t.me/CatatanAzDay)
 - [Contact Owner](https://t.me/tth_kiya98)
 
-## License
+## Lisensi
 
-Distributed under the [GNU General Public License v3.0 License.](https://github.com/Prince-Botz/TianaBot/blob/main/LICENSE) See `LICENSE.md` for more information.
+Distribusi [GNU General Public License v3.0 License.](https://github.com/Prince-Botz/TianaBot/blob/main/LICENSE) Lihat `LICENSE.md` untuk informasi selebihnya.
 
-## Acknowledgement 
-Special thanks to these amazing projects/people which/who help power Eiko Bot:
+## Pengakuan
+Terima kasih khusus untuk proyek/orang-orang luar biasa ini yang/yang membantu memberi kekuatan pada Eiko Bot:
 
 - [Prince](https://t.me/NoobxCoder)
