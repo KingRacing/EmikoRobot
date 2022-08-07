@@ -13,9 +13,9 @@ DEFAULT_WELCOME_MESSAGES = [
     "{first} is here!",  # Discord welcome messages copied
     "Ready player {first}",
     "Genos, {first} is here.",
-    "A wild {first} appeared.",
-    "{first} came in like a Lion!",
-    "{first} has joined your party.",
+    "{first} Selamat datang! Kami merasa terhormat untuk menerima Anda.",
+    "{first} Sambutan yang sangat hangat untuk Anda! Sangat menyenangkan memilik Anda di antara kami!",
+    "{first} Hidup jarang memberi kita kesempatan untuk mengenal seseorang yang dapat memengaruhi kita begitu dalam. Saya beruntung memiliki kesempatan untuk bertemu denganmu! Selamat datang di grup kami.",
     "{first} just joined. Can I get a heal?",
     "{first} just joined the chat - asdgfhak!",
     "{first} just joined. Everyone, look busy!",
