@@ -85,15 +85,15 @@ PM_START_TEXT = """
 *Halo {} * [!]({})
 ───────────────────────
 × *Saya Adalah Bot Untuk Mengatur Grupmu*
-× *Saya Sangat daCepat dan Lebih efisien Saya menyediakan fitur luar biasa!*
+× *Saya Sangat Cepat dan Lebih efisien, Saya menyediakan fitur luar biasa!*
 ───────────────────────
-× *Uptime:* `{}`
+× *Waktu Operasi Server:* `{}`
 × `{}` *Pengguna, Aᴄʀᴏꜱꜱ* `{}` *Obrolan.*
 ───────────────────────"""
 
 buttons = [
     [
-        InlineKeyboardButton(text="❓ 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙃𝙚𝙡𝙥 ❗️", callback_data="tiana_"),
+        InlineKeyboardButton(text="❓ 𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 & 𝗕𝗮𝗻𝘁𝘂𝗮𝗻 ❗️", callback_data="tiana_"),
     ],
     [
         InlineKeyboardButton(text="👩‍💻 𝙄𝙣𝙛𝙤", callback_data="about_"),
@@ -104,7 +104,7 @@ buttons = [
         InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🫂", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [  
-        InlineKeyboardButton(text="➕️ 𝘼𝙙𝙙 𝙢𝙚 𝙩𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+        InlineKeyboardButton(text="➕️ 𝗧𝗮𝗺𝗯𝗮𝗵𝗸𝗮𝗻 𝘀𝗮𝘆𝗮 𝗸𝗲 𝗴𝗿𝘂𝗽𝗺𝘂 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
     ], 
     
 ]
@@ -235,11 +235,11 @@ def start(update: Update, context: CallbackContext):
           update.effective_message.reply_photo(
                 TIANA_IMG, caption="""*Hᴇʟʟᴏ {} !*
 ───────────────────
-× *I'ᴍ Aɴɪᴍᴇ-Tʜᴇᴍᴇ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
-× *I'ᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Fᴇᴀᴛᴜʀᴇꜱ!*
+× *Saya Adalah Bot Untuk Mengatur Grupmu*
+× *Saya Sangat Cepat dan Lebih efisien, Saya menyediakan fitur luar biasa!*
 ───────────────────
-× *Uᴘᴛɪᴍᴇ:* `{}`
-× `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
+× *Waktu Operasi Server:* `{}`
+× `{}` *Pengguna, Lintas* `{}` *Obrolan.*
 ───────────────────""".format(
                     escape_markdown(first_name),
                     escape_markdown(uptime),
@@ -247,7 +247,7 @@ def start(update: Update, context: CallbackContext):
                     sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(
                  [
-                  [InlineKeyboardButton(text="📄 Source", url="https://github.com/prince-botz/tianabot"), 
+                  [InlineKeyboardButton(text="📄 Sumber Kode", url="https://github.com/prince-botz/tianabot"), 
                    InlineKeyboardButton(text="🫂 Support", url=f"https://t.me/{SUPPORT_CHAT}")]
                  ]
               ),
@@ -335,7 +335,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="「 Bᴀᴄᴋ 」", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="「 𝐾𝑒𝑚𝑏𝑎𝑙𝑖 」", callback_data="help_back")]]
                 ),
             )
 
