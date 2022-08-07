@@ -1,5 +1,5 @@
 {
-      "name": "Tiana Bot",
+      "name": "Eiki Bot",
       "logo": "https://te.legra.ph/file/5f575d5b4a1d019ae2864.png",
       "description": "A Telegram Powerfull Group Managment Bot written in Python using Pyrogram and Telethon",
       "keywords": [
@@ -11,7 +11,7 @@
          "tianabot",
          "telegram"
       ],   
-   "repository": "https://github.com/Prince-Botz/TianaBot",
+   "repository": "https://github.com/EmiliaTzy/EikoRobot",
    "addons": [
       {
          "options": {
@@ -30,68 +30,68 @@
   ],  
    "env": {
       "TOKEN": {
-         "description": "Your bot token. Get one from @BotFather duh",
+         "description": "Isi dengan bot tokenmu. Dapatkan dari @BotFather ya",
          "required": true,
          "value": ""
       },
       "API_ID": {
-         "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
+         "description": "Dapatkan API_ID dati my.telegram.org untuk modul telethon.",
          "required": true,
          "value": ""
       },
       "API_HASH": {
-         "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
+         "description": "Dapatkan API_HASH dari my.telegram.org, untuk modul telethon.",
          "required": true,
          "value": ""
       },    
       "SQLALCHEMY_DATABASE_URI": {
-         "description": "Your postgres sql db, empty this field if you dont have one.",
+         "description": "Postgres sql db mu, kosongkan saja jika kamu punya.",
          "required": false,
          "value": "sqldbtype://username:pw@hostname:port/db_name"
       },      
       "OWNER_ID": {
-         "description": "Your user ID as an integer.",
+         "description": "ID pengguna untuk pemilik.",
          "required": true,
-         "value": "1218405248"
+         "value": "1221249722"
       },
       "BOT_ID": {
-         "description": "Your bot ID.. Use any other bot to get it.",
+         "description": "Isi dengan bot IDmu. Gunakan Bot @rNatalie_bot untuk mengetahui.",
          "required": true,
          "value": ""
       },
       "HEROKU_API_KEY": {
-        "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
+        "description": "Isi dengan Heroku API key, dapatkan dari 'https://dashboard.heroku.com/account'",
         "value": ""
       },
       "HEROKU_APP_NAME": {
-        "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
+        "description": "Masukkan Heroku app name disini (Harus sama dengan nama yang ada diatas sendiri).",
         "required": false
       },
       "OWNER_USERNAME": {
-         "description": "Your username without the @",
-         "value": "PrincexBots"
+         "description": "Isi dengan username tanpa @",
+         "value": "tth_kiya98"
       },
       "BOT_USERNAME": {
-         "description": "Your bot username without the @",
-         "value": "Tiana_Prince_Bot"
+         "description": "Isi dengan bot username tanpa @",
+         "value": "EikoManager_Bot"
       },
       "ASS_USERNAME": {
-         "description": "Your Musicbot Assistant username without the @",
-         "value": "TianaxAssistant"
+         "description": "Isi Username asisten musik tanpa @",
+         "value": "eikoassistants"
       },
       "BOT_NAME": {
-         "description": "Your Bot Name",
-         "value": "Tiana"
+         "description": "Isi dengan Nama botmu",
+         "value": "Eiko"
       },
       "UPDATE_CHANNEL": {
          "description": "Your Telegram Bot Update Channel username Without @ like: TianaxUpdates.",
          "required": true,
-         "value": "TianaxUpdates"
+         "value": "CatatanAz"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username Without @ like: TianaxSupport.",
          "required": true,
-         "value": "TianaxSupport"
+         "value": "CatatanAzDay"
       },
       "START_IMG": {
          "description": "Enter Your Bot Image Telegraph Link",
