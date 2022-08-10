@@ -1,7 +1,7 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from Tianabot import telethn as tbot
 from Tianabot.events import register
-from Tianabot import ubot2 as ubot
+from Tianabot import ubot as ubot
 from asyncio.exceptions import TimeoutError
 
 
