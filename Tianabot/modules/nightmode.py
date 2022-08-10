@@ -1,5 +1,5 @@
 import os
-from EmikoRobot.modules.sql.night_mode_sql import (
+from EikoRobot.modules.sql.night_mode_sql import (
     add_nightmode,
     rmnightmode,
     get_all_chat_id,
@@ -8,8 +8,8 @@ from EmikoRobot.modules.sql.night_mode_sql import (
 from telethon.tl.types import ChatBannedRights
 from apscheduler.schedulers.asyncio import AsyncIOScheduler 
 from telethon import functions
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot, OWNER_ID
+from EikoRobot.events import register
+from EikoRobot import telethn as tbot, OWNER_ID
 from telethon import Button, custom, events
 
 hehes = ChatBannedRights(
