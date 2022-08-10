@@ -88,7 +88,7 @@ PM_START_TEXT = """
 × *Saya Sangat Cepat dan Lebih efisien, Saya menyediakan fitur luar biasa!*
 ───────────────────────
 × *Waktu Operasi Server:* `{}`
-× `{}` *Pengguna, Aᴄʀᴏꜱꜱ* `{}` *Obrolan.*
+× `{}` *Pengguna, Lintas* `{}` *Obrolan.*
 ───────────────────────"""
 
 buttons = [
@@ -233,7 +233,7 @@ def start(update: Update, context: CallbackContext):
     else:
           first_name = update.effective_user.first_name
           update.effective_message.reply_photo(
-                TIANA_IMG, caption="""*Hᴇʟʟᴏ {} !*
+                TIANA_IMG, caption="""*Hallo {} !*
 ───────────────────
 × *Saya Adalah Bot Untuk Mengatur Grupmu*
 × *Saya Sangat Cepat dan Lebih efisien, Saya menyediakan fitur luar biasa!*
@@ -361,19 +361,19 @@ def tiana_callback_handler(update, context):
     query = update.callback_query
     if query.data == "tiana_":
         query.message.edit_text(
-            text="""𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪. 
+            text="""𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗗𝗶 𝗠𝗲𝗻𝘂 𝗕𝗮𝗻𝘁𝘂𝗮𝗻. 
 ────────────────────────
-*Sᴇʟᴇᴄᴛ  Aʟʟ  Cᴏᴍᴍᴀɴᴅs  Fᴏʀ  Fᴜʟʟ  Hᴇʟᴘ  Oʀ  Sᴇʟᴇᴄᴛ  Cᴀᴛᴀɢᴏʀʏ  Fᴏʀ  Mᴏʀᴇ  Hᴇʟᴘ  Dᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ  Oɴ  Sᴇʟᴇᴄᴛᴇᴅ  Fɪᴇʟᴅs*""",
+*Pilih semua perintah untuk bantuan penuh atau pilih kategori untuk dokumentasi bantuan lebih lanjut di bidang yang dipilih*""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                     InlineKeyboardButton(text="➕ 𝘼𝙡𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ➕", callback_data="help_back"),
+                     InlineKeyboardButton(text="➕ 𝗦𝗲𝗺𝘂𝗮 𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 ➕", callback_data="help_back"),
                     ],                           
-                    [InlineKeyboardButton(text="𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 ❓", callback_data="tiana_help"),
-                     InlineKeyboardButton(text="𝙈𝙪𝙨𝙞𝙘 𝘽𝙤𝙩 🎧", callback_data="tiana_music")],
-                    [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_back"),
+                    [InlineKeyboardButton(text="𝗕𝗮𝗴𝗮𝗶𝗺𝗮𝗻𝗮 𝗰𝗮𝗿𝗮 𝗺𝗲𝗻𝗴𝗴𝘂𝗻𝗮𝗸𝗮𝗻 𝘀𝗮𝘆𝗮 ❓", callback_data="tiana_help"),
+                     InlineKeyboardButton(text="𝗕𝗼𝘁 𝗠𝘂𝘀𝗶𝗸 🎧", callback_data="tiana_music")],
+                    [InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_back"),
                      InlineKeyboardButton(text="𝙄𝙣𝙡𝙞𝙣𝙚 🔗", switch_inline_query_current_chat="")],
                 ]
             ),
@@ -401,8 +401,8 @@ Cʟɪᴄᴋ  Bᴇʟᴏᴡ  Bᴜᴛᴛᴏɴ  Tᴏ  Aᴅᴅ  Bᴏᴛ  Iɴ  Yᴏᴜ
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
               [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="tiana_vida")],
-               [InlineKeyboardButton(text="➕️ 𝘼𝙙𝙙 𝙢𝙚 𝙩𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],       
-                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_"),
+               [InlineKeyboardButton(text="➕️ 𝗧𝗮𝗺𝗯𝗮𝗵𝗸𝗮𝗻 𝘀𝗮𝘆𝗮 𝗸𝗲 𝗴𝗿𝘂𝗽𝗺𝘂 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],       
+                [InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_"),
                  InlineKeyboardButton(text="➡️", callback_data="tiana_helpa")]
               ]
             ),
@@ -489,22 +489,22 @@ Nᴏᴛᴇ-  ɴɪɢʜᴛ  ᴍᴏᴅᴇ  ᴄʜᴀᴛs  ɢᴇᴛ  ᴀᴜᴛᴏᴍ�
         )
     elif query.data == "tiana_term":
         query.message.edit_text(
-            text=f"""✗ *Terms and Conditions:*
+            text=f"""✗ *Syarat dan ketentuan:*
 
-- Only your first name, last name (if any) and username (if any) is stored for a convenient communication!
-- No group ID or it's messages are stored, we respect everyone's privacy.
-- Messages between Bot and you is only infront of your eyes and there is no backuse of it.
-- Watch your group, if someone is spamming your group, you can use the report feature of your Telegram Client.
-- Do not spam commands, buttons, or anything in bot PM.
+- Hanya nama depan, nama belakang (jika ada) dan nama pengguna (jika ada) yang disimpan untuk komunikasi yang nyaman!
+- Tidak ada ID grup atau pesannya disimpan, kami menghormati privasi semua orang.
+- Pesan antara Bot dan Anda hanya ada di depan mata Anda dan tidak ada gunanya kembali.
+- Perhatikan grup Anda, jika seseorang mengirim spam ke grup Anda, Anda dapat menggunakan fitur laporan Klien Telegram Anda.
+- Jangan spam perintah, tombol, atau apa pun di bot PM.
 
-*NOTE:* Terms and Conditions might change anytime""",
+*CATATAN:* Syarat dan ketentuan bisa berubah sewaktu-waktu""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
               [InlineKeyboardButton(text="𝙐𝙥𝙙𝙖𝙩𝙚", url=f"https://t.me/{UPDATE_CHANNEL}"),       
               InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", url=f"https://t.me/{SUPPORT_CHAT}")],       
-              [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_")]]
+              [InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_")]]
             ),
         )
     elif query.data == "tiana_helpe":
@@ -522,9 +522,9 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="➕ 𝘼𝙡𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ➕", callback_data="help_back")],
-                [InlineKeyboardButton(text="⬅️", callback_data="tiana_helpd"),
-                InlineKeyboardButton(text="𝙈𝙖𝙞𝙣 𝙈𝙚𝙣𝙪", callback_data="tiana_")]]
+                [[InlineKeyboardButton(text="➕ 𝗦𝗲𝗺𝘂𝗮 𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 ➕", callback_data="help_back")],
+                [InlineKeyboardButton(text="⬅️ 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_helpd"),
+                InlineKeyboardButton(text="𝗠𝗲𝗻𝘂 𝗨𝘁𝗮𝗺𝗮", callback_data="tiana_")]]
             ),
         )
     elif query.data == "tiana_music":
@@ -544,11 +544,11 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="tiana_vidb")],
-                [InlineKeyboardButton(text="𝙋𝙡𝙖𝙮 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musica"),
-                 InlineKeyboardButton(text="𝘽𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicc")],
-                [InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicb"),
-                 InlineKeyboardButton(text="𝙀𝙭𝙩𝙧𝙖 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicd")],
-                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_")]
+                [InlineKeyboardButton(text="𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝙋𝙡𝙖𝙮", callback_data="tiana_musica"),
+                 InlineKeyboardButton(text="𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝘽𝙤𝙩", callback_data="tiana_musicc")],
+                [InlineKeyboardButton(text="𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝘼𝙙𝙢𝙞𝙣", callback_data="tiana_musicb"),
+                 InlineKeyboardButton(text="𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝙀𝙭𝙩𝙧𝙖", callback_data="tiana_musicd")],
+                [InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_")]
                ]
             ),
         )
@@ -580,7 +580,7 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_musicb":
@@ -620,7 +620,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_musicc":
@@ -641,7 +641,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - Ping the Bot and check Ram, Cpu etc stats of Tiana.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_musicd":
@@ -666,7 +666,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - When enabled, Tiana will be deleting her 3rd last message to keep your chat clean.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_about":
@@ -691,7 +691,7 @@ Support
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_")]]
+                [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_")]]
             ),
         )
     elif query.data == "tiana_support":
@@ -709,7 +709,7 @@ Support
                     InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/{UPDATE_CHANNEL}"),
                  ],
                  [
-                    InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_"),
+                    InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_"),
                  
                  ]
                 ]
@@ -725,7 +725,7 @@ Support
                 [
                  [
                     InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", url="github.com/Prince-Botz/Tianabot"),                 
-                    InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_"),
+                    InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_"),
                  ]    
                 ]
             ),
@@ -765,7 +765,7 @@ def tiana_about_callback(update: Update, context: CallbackContext):
                      InlineKeyboardButton(text="𝙏𝙚𝙧𝙢𝙨 𝘼𝙣𝙙 𝘾𝙤𝙣𝙙𝙞𝙩𝙞𝙤𝙣𝙨❗️", callback_data="tiana_term"),
                  ],
                  [
-                     InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_back"),
+                     InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_back"),
                  ]    
                ]
             ),
