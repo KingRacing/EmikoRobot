@@ -1,5 +1,5 @@
 import os
-from EikoRobot.modules.sql.night_mode_sql import (
+from Tianabot.modules.sql.night_mode_sql import (
     add_nightmode,
     rmnightmode,
     get_all_chat_id,
