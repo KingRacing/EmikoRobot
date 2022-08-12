@@ -509,16 +509,15 @@ Nᴏᴛᴇ-  ɴɪɢʜᴛ  ᴍᴏᴅᴇ  ᴄʜᴀᴛs  ɢᴇᴛ  ᴀᴜᴛᴏᴍ�
         )
     elif query.data == "tiana_helpe":
         query.message.edit_text(
-            text="""*× Sᴏ  Nᴏᴡ  Yᴏᴜ  Aʀᴇ  Aᴛ  Tʜᴇ  Eɴᴅ  Oғ  Bᴀsɪᴄ  Tᴏᴜʀ.  Bᴜᴛ  Tʜɪs  Is  Nᴏᴛ  Aʟʟ  I  Cᴀɴ  Dᴏ.
+            text="""*× Jadi sekarang Anda berada di akhir tur dasar.  Tapi ini tidak semua yang bisa saya lakukan.
 
-Sᴇɴᴅ  /help  Iɴ  Bᴏᴛ  Pᴍ  Tᴏ  Aᴄᴄᴇss  Hᴇʟᴘ  Mᴇɴᴜ
+Kirim /Help dalam pm untuk mengakses menu bantuan
+Ada banyak alat praktis untuk dicoba.  
+Dan juga jika Anda memiliki saran tentang saya, jangan lupa untuk memberi tahu mereka kepada developer
 
-Tʜᴇʀᴇ  Aʀᴇ  Mᴀɴʏ  Hᴀɴᴅʏ  Tᴏᴏʟs  Tᴏ  Tʀʏ  Oᴜᴛ.  
-Aɴᴅ  Aʟsᴏ  Iғ  Yᴏᴜ  Hᴀᴠᴇ  Aɴʏ  Sᴜɢɢᴇssɪᴏɴs  Aʙᴏᴜᴛ  Mᴇ,  Dᴏɴ'ᴛ  Fᴏʀɢᴇᴛ  Tᴏ  tᴇʟʟ  Tʜᴇᴍ  Tᴏ  Dᴇᴠs
+Terimakasih Lagi telah menggunakan saya
 
-Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
-
-× Bʏ  Usɪɴɢ  Tʜɪꜱ  Bᴏᴛ  Yᴏᴜ  Aʀᴇ  Aɢʀᴇᴇᴅ  Tᴏ  Oᴜʀ  Tᴇʀᴍs  &  Cᴏɴᴅɪᴛɪᴏɴs*""",
+× Dengan menggunakan bot ini Anda menyetujui syarat & ketentuan kami*""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -646,24 +645,24 @@ Tiana has a additional feature for non-admin users who want to use admin command
         )
     elif query.data == "tiana_musicd":
         query.message.edit_text(
-            text=""" *Here is the help for Extra Commands*:
+            text=""" *Berikut adalah bantuan untuk Perintah Ekstra*:
 
 
 
-/lyrics [Music Name]
-- Searches Lyrics for the particular Music on web.
+/lyrics [Nama Lagu]
+- Mencari Lirik untuk Musik tertentu di web.
 
 /sudolist 
-- Check Sudo Users of Tiana Music Bot
+- Periksa Sudo Pengguna Eiko Music Bot
 
-/song [Track Name] or [YT Link]
-- Download any track from youtube in mp3 or mp4 formats via Tiana.
+/song [Nama Lagu] or [YT Link]
+- Unduh lagu apa pun dari youtube dalam format mp3 atau mp4 melalui Eiko.
 
 /queue
-- Check Queue List of Music.
+- Periksa Daftar Antrian Musik.
 
 /cleanmode [Enable|Disable]
-- When enabled, Tiana will be deleting her 3rd last message to keep your chat clean.""",
+- Saat diaktifkan, Eiko akan menghapus pesan terakhirnya yang ketiga untuk menjaga obrolan Anda tetap bersih.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
@@ -671,23 +670,21 @@ Tiana has a additional feature for non-admin users who want to use admin command
         )
     elif query.data == "tiana_about":
         query.message.edit_text(
-            text=f"""{BOT_NAME} it's online since January 2022 and it's constantly updated!
+            text=f"""{BOT_NAME} itu online sejak Juli 2022 dan terus diperbarui!
             
 Bot Admins
                        
-• @{OWNER_USERNAME}, bot creator and main developer.
+• @{OWNER_USERNAME}, pembuat bot dan pengembang utama.
             
-• The Doctor, server manager and developer.
-            
-• Manuel 5, developer.
+• Seorang Fotografer sekaligus mahasiswa Universitas Al-Azhar Cairo Mesir 🇪🇬.
             
 Support
             
-• [Click here](https://t.me/{SUPPORT_CHAT}) to consult the updated list of Official Supporters of the bot.
+• [Klik Disini](https://t.me/{SUPPORT_CHAT}) untuk berkonsultasi dengan daftar Suporter Resmi bot yang diperbarui.
             
-• Thanks to all our donors for supporting server and development expenses and all those who have reported bugs or suggested new features.
+• Terima kasih kepada semua donor kami untuk mendukung server dan biaya pengembangan dan semua orang yang telah melaporkan bug atau menyarankan fitur baru.
             
-• We also thank all the groups who rely on our Bot for this service, we hope you will always like it: we are constantly working to improve it!""",
+• Kami juga berterima kasih kepada semua grup yang mengandalkan Bot kami untuk layanan ini, kami harap Anda akan selalu menyukainya: kami terus bekerja untuk meningkatkannya!""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -701,12 +698,12 @@ Support
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Nᴇᴡꜱ", url=f"t.me/{UPDATE_CHANNEL}"),
-                    InlineKeyboardButton(text="Dᴏɴᴀᴛᴇ Mᴇ", url=f"{DONATION_LINK}"),
+                    InlineKeyboardButton(text="𝐁𝐞𝐫𝐢𝐭𝐚", url=f"t.me/{UPDATE_CHANNEL}"),
+                    InlineKeyboardButton(text="𝐃𝐨𝐧𝐚𝐬𝐢 𝐊𝐞 𝐒𝐚𝐲𝐚", url=f"{DONATION_LINK}"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT_CHAT}"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/{UPDATE_CHANNEL}"),
+                    InlineKeyboardButton(text="𝐒𝐮𝐩𝐩𝐨𝐫𝐭", url=f"t.me/{SUPPORT_CHAT}"),
+                    InlineKeyboardButton(text="𝐏𝐞𝐦𝐛𝐚𝐡𝐚𝐫𝐮𝐚𝐧", url=f"https://t.me/{UPDATE_CHANNEL}"),
                  ],
                  [
                     InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_"),
@@ -717,14 +714,14 @@ Support
         )
     elif query.data == "tiana_source":
         query.message.edit_text(
-            text="""*Tianabot is Now Open Source Bot Project.*
+            text="""*EikoRobot Sekarang Proyek Bot Sumber Terbuka.*
 
-*Click below Button to Get Source Code.*""",
+*Klik Tombol di bawah ini untuk Mendapatkan Kode Sumber.*""",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", url="github.com/Prince-Botz/Tianabot"),                 
+                    InlineKeyboardButton(text="📄 𝗦𝘂𝗺𝗯𝗲𝗿", url="github.com/Prince-Botz/Tianabot"),                 
                     InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_"),
                  ]    
                 ]
@@ -748,21 +745,21 @@ def tiana_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "about_":
         query.message.edit_text(
-            text="""𝘾𝙇𝙄𝘾𝙆 𝘽𝙀𝙇𝙊𝙒 𝘽𝙐𝙏𝙏𝙊𝙉 𝙁𝙊𝙍 𝙆𝙉𝙊𝙒 𝙈𝙊𝙍𝙀 𝘼𝘽𝙊𝙐𝙏 𝙈𝙀""",
+            text="""𝗞𝗹𝗶𝗸 𝗧𝗼𝗺𝗯𝗼𝗹 𝗨𝗻𝘁𝘂𝗸 𝗧𝗮𝗵𝘂 𝗟𝗲𝗯𝗶𝗵 𝗕𝗮𝗻𝘆𝗮𝗸 𝗧𝗲𝗻𝘁𝗮𝗻𝗴 𝗦𝗮𝘆𝗮""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                [
                  [
-                     InlineKeyboardButton(text="❗️ 𝘼𝙗𝙤𝙪𝙩", callback_data="tiana_about"),
-                     InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", callback_data="tiana_source"),
+                     InlineKeyboardButton(text="❗️ 𝗧𝗲𝗻𝘁𝗮𝗻𝗴 𝗦𝗮𝘆𝗮", callback_data="tiana_about"),
+                     InlineKeyboardButton(text="📄 𝗦𝘂𝗺𝗯𝗲𝗿", callback_data="tiana_source"),
                  ],
                  [  
                     InlineKeyboardButton(text="🫂 𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="tiana_support"),
                     InlineKeyboardButton(text="👨‍✈️ 𝙊𝙬𝙣𝙚𝙧", url=f"t.me/{OWNER_USERNAME}"),
                  ],
                  [
-                     InlineKeyboardButton(text="𝙏𝙚𝙧𝙢𝙨 𝘼𝙣𝙙 𝘾𝙤𝙣𝙙𝙞𝙩𝙞𝙤𝙣𝙨❗️", callback_data="tiana_term"),
+                     InlineKeyboardButton(text="𝗦𝘆𝗮𝗿𝗮𝘁 𝗱𝗮𝗻 𝗞𝗲𝘁𝗲𝗻𝘁𝘂𝗮𝗻❗️", callback_data="tiana_term"),
                  ],
                  [
                      InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_back"),
@@ -796,12 +793,12 @@ def get_help(update: Update, context: CallbackContext):
         if len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
             module = args[1].lower()
             update.effective_message.reply_text(
-                f"Contact me in PM to get help of {module.capitalize()}",
+                f"Hubungi saya di PM untuk mendapatkan bantuan {module.capitalize()}",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                text="Bantuan",
+                                text="𝗕𝗮𝗻𝘁𝘂𝗮𝗻",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -812,12 +809,12 @@ def get_help(update: Update, context: CallbackContext):
             )
             return
         update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+            "Hubungi saya di PM untuk mendapatkan daftar kemungkinan perintah.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="𝗕𝗮𝗻𝘁𝘂𝗮𝗻",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ]
@@ -829,7 +826,7 @@ def get_help(update: Update, context: CallbackContext):
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = (
-            "Here is the available help for the *{}* module:\n".format(
+            "Berikut adalah bantuan yang tersedia untuk modul *{}*:\n".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
@@ -838,7 +835,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Kembali", callback_data="tiana_")]]
+                [[InlineKeyboardButton(text="𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_")]]
             ),
         )
 
@@ -855,14 +852,14 @@ def send_settings(chat_id, user_id, user=False):
             )
             dispatcher.bot.send_message(
                 user_id,
-                "These are your current settings:" + "\n\n" + settings,
+                "Ini adalah pengaturan Anda saat ini:" + "\n\n" + settings,
                 parse_mode=ParseMode.MARKDOWN,
             )
 
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any user specific settings available :'(",
+                "Sepertinya tidak ada pengaturan khusus pengguna yang tersedia :'(",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -871,7 +868,7 @@ def send_settings(chat_id, user_id, user=False):
             chat_name = dispatcher.bot.getChat(chat_id).title
             dispatcher.bot.send_message(
                 user_id,
-                text="Which module would you like to check {}'s settings for?".format(
+                text="Modul mana yang ingin Anda periksa untuk setelan {}?".format(
                     chat_name
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -881,8 +878,8 @@ def send_settings(chat_id, user_id, user=False):
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any chat settings available :'(\nSend this "
-                "in a group chat you're admin in to find its current settings!",
+                "Sepertinya tidak ada pengaturan obrolan yang tersedia :'(\nKirim ini "
+                "dalam obrolan grup Anda menjadi admin untuk menemukan pengaturannya saat ini!",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -901,7 +898,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* has the following settings for the *{}* module:\n\n".format(
+            text = "*{}* memiliki pengaturan berikut untuk modul *{}*:\n\n".format(
                 escape_markdown(chat.title), CHAT_SETTINGS[module].__mod_name__
             ) + CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(
@@ -911,7 +908,7 @@ def settings_button(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Kembali",
+                                text="𝗞𝗲𝗺𝗯𝗮𝗹𝗶",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -924,8 +921,8 @@ def settings_button(update: Update, context: CallbackContext):
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                "Hi there! There are quite a few settings for {} - go ahead and pick what "
-                "you're interested in.".format(chat.title),
+                "Hai! Ada beberapa setelan untuk {} - lanjutkan dan pilih yang "
+                "kamu tertarik.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         curr_page - 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -938,8 +935,8 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                "Hi there! There are quite a few settings for {} - go ahead and pick what "
-                "you're interested in.".format(chat.title),
+                "Hai! Ada beberapa setelan untuk {} - lanjutkan dan pilih yang "
+                "kamu tertarik.".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         next_page + 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -951,8 +948,8 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                text="Hi there! There are quite a few settings for {} - go ahead and pick what "
-                "you're interested in.".format(escape_markdown(chat.title)),
+                text="Hai! Ada beberapa setelan untuk {} - lanjutkan dan pilih yang "
+                "kamu tertarik.".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
@@ -1035,11 +1032,11 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
+                "Saya telah PM Anda tentang menyumbang ke pemilik saya!"
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information."
+                "Hubungi saya di PM terlebih dahulu untuk mendapatkan informasi donasi."
             )
 
 
