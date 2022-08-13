@@ -669,17 +669,17 @@ Eiko memiliki fitur tambahan untuk pengguna non-admin yang ingin menggunakan per
         )
     elif query.data == "tiana_about":
         query.message.edit_text(
-            text=f"""{BOT_NAME} itu online sejak Juli 2022 dan terus diperbarui!!           
+            text=f"""Eiko Telah online sejak Juli 2022 dan terus diperbarui!!           
 
 Bot Admin
                        
-• @{OWNER_USERNAME}, pembuat bot dan pengembang utama.            
+• [Az](https://t.me/tth_kiya98) pembuat bot dan pengembang utama.            
 • Seorang Fotografer sekaligus mahasiswa Universitas Al Azhar Cairo Mesir.
             
 Support            
-• [Klik Disini](https://t.me/{SUPPORT_CHAT}) untuk berkonsultasi dengan daftar Suporter Resmi bot yang diperbarui.            
+• [Klik Disini](https://t.me/CatatanAzDay) untuk berkonsultasi dengan daftar Suporter Resmi bot yang diperbarui.            
 • Terima kasih kepada semua donor kami untuk mendukung server dan biaya pengembangan dan semua orang yang telah melaporkan bug atau menyarankan fitur baru.           
-• Kami juga berterima kasih kepada semua grup yang mengandalkan Bot kami untuk layanan ini, kami harap Anda akan selalu menyukainya: kami terus bekerja untuk meningkatkannya!""",
+• Kami juga berterima kasih kepada semua grup yang mengandalkan Bot kami untuk layanan ini, kami harap Anda akan selalu menyukainya: kami terus bekerja untuk meningkatkannya""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
