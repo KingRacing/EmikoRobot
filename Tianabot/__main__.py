@@ -674,7 +674,7 @@ Eiko memiliki fitur tambahan untuk pengguna non-admin yang ingin menggunakan per
 Bot Admin
                        
 • @{OWNER_USERNAME}, pembuat bot dan pengembang utama.            
-• Seorang Fotografer sekaligus mahasiswa Universitas Al-Azhar Cairo Mesir.
+• Seorang Fotografer sekaligus mahasiswa Universitas Al Azhar Cairo Mesir.
             
 Support            
 • [Klik Disini](https://t.me/{SUPPORT_CHAT}) untuk berkonsultasi dengan daftar Suporter Resmi bot yang diperbarui.            
