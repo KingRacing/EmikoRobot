@@ -169,6 +169,8 @@ scheduler.add_job(job_open, trigger="cron", hour=5, minute=58)
 scheduler.start()
 
 __help__ = """
-/nightmode (on/off) : Saat diaktifkan maka media akan dihapus
+*Mode Malam*
+❍ /nightmode (on/off) *:* Saat diaktifkan maka media akan dihapus. 
 """
+
 __mod_name__ = "𝖭𝗂𝗀𝗁𝗍 𝖬𝗈𝖽𝖾"
