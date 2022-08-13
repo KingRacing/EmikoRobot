@@ -528,17 +528,17 @@ Terimakasih Lagi telah menggunakan saya
         )
     elif query.data == "tiana_music":
         query.message.edit_text(
-            text=f"""*Hᴇʀᴇ Iꜱ Tʜᴇ Hᴇʟᴘ 「Aꜱꜱɪꜱᴛᴀɴᴛ」 Mᴏᴅᴜʟᴇ:*
+            text=f"""* Berikut adalah bantuan untuk modul「Asisten」:*
             
-1.) first, add me to your group.
+1.) pertama, tambahkan saya ke grup Anda.
             
-2.) then promote me as admin and give all permissions except anonymous admin.
+2.) kemudian promosikan saya sebagai admin dan berikan semua izin kecuali admin anonim.
             
-3.) add Assistant to your group using /userbotjoin.
+3.) tambahkan Asisten ke grup Anda menggunakan /userbotjoin.
             
-4.) turn on the video chat first before start to play music.
+4.) nyalakan obrolan video terlebih dahulu sebelum mulai memutar musik.
             
-*Lets Enjoy Music Bot And Join Support Group*""",
+*Mari Nikmati Bot Musik Dan Bergabunglah dengan Grup Dukungan*""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -553,29 +553,28 @@ Terimakasih Lagi telah menggunakan saya
         )
     elif query.data == "tiana_musica":
         query.message.edit_text(
-            text="""✗*Here is the help for Play Commands*:
+            text="""✗*Berikut adalah bantuan untuk Perintah Play*:
 
-*Note*: Tiana Music Bot works on a single merged commands for Music and Video
+*Catatan*: Eiko Music Bot bekerja pada satu perintah gabungan untuk Musik dan Video
 
-✗ *Youtube and Telegram Files*:
+✗ *File Youtube dan Telegram*:
 
-/play [Reply to any Video or Audio] or [YT Link] or [Music Name]  
-- Stream Video or Music on Voice Chat by selecting inline Buttons you get
+/play [Balas ke Video atau Audio] atau [YT Link] atau [Nama Musik]  
+- Streaming Video atau Musik di Obrolan Suara dengan memilih Tombol sebaris yang Anda dapatkan
 
-
-✗ *Tiana Database Saved Playlists*:
+✗ *Daftar Putar Tersimpan Database Eiko*:
 
 /createplaylist
-- Create Your Playlist on Tiana's Server with Custom Name
+- Buat Daftar Putar Anda di Server Eiko dengan Nama Kustom
 
 /playlist 
-- Check Your Saved Playlist On Servers.
+- Periksa Daftar Putar Tersimpan Anda Di Server.
 
 /deleteplaylist
-- Delete any saved music in your playlist
+- Hapus semua musik yang disimpan di daftar putar Anda
 
 /playplaylist 
-- Start playing Your Saved Playlist on Tiana Servers.""",
+- Mulai mainkan Daftar Putar Tersimpan Anda di Server Eiko.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -584,38 +583,38 @@ Terimakasih Lagi telah menggunakan saya
         )
     elif query.data == "tiana_musicb":
         query.message.edit_text(
-            text="""✗ *Here is the help for Admin Commands*:
+            text="""✗ *Berikut adalah bantuan untuk Perintah Admin*:
 
 
-✗ *Admin Commands*:
+✗ *Perintah Admin*:
 
 /pause 
-- Pause the playing music on voice chat.
+- Jeda pemutaran musik di obrolan suara.
 
 /resume
-- Resume the paused music on voice chat.
+- Lanjutkan musik yang dijeda di obrolan suara.
 
 /skip
-- Skip the current playing music on voice chat
+- Lewati musik yang sedang diputar di obrolan suara
 
 /end or /stop
-- Stop the playout.
+- Menghentikan Lagu.
 
 
-✗ *Authorised Users List*:
+✗ *Daftar Pengguna Resmi*:
 
-Tiana has a additional feature for non-admin users who want to use admin commands
--Auth users can skip, pause, stop, resume Voice Chats even without Admin Rights.
+Eiko memiliki fitur tambahan untuk pengguna non-admin yang ingin menggunakan perintah admin
+-Pengguna auth dapat skip, pause, stop, resume Obrolan Suara bahkan tanpa Hak Admin.
 
 
-/auth [Username or Reply to a Message] 
-- Add a user to AUTH LIST of the group.
+/auth [Balas ke pesan atau Username] 
+- Tambahkan pengguna ke AUTH LIST grup.
 
-/unauth [Username or Reply to a Message] 
-- Remove a user from AUTH LIST of the group.
+/unauth [Balas ke pesan atau Username] 
+- Hapus pengguna dari AUTH LIST grup.
 
 /authusers 
-- Check AUTH LIST of the group.""",
+- Periksa DAFTAR AUTH grup.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -624,20 +623,20 @@ Tiana has a additional feature for non-admin users who want to use admin command
         )
     elif query.data == "tiana_musicc":
         query.message.edit_text(
-            text="""✗ *Here is the help for Bot Commands*:
+            text="""✗ *Inilah bantuan untuk Perintah Bot*:
 
 
 /start 
-- Start the Tiana Music Bot.
+- Mulai Eiko Music Bot.
 
 /help 
-- Get Commands Helper Menu with detailed explanations of commands.
+- Dapatkan Menu Pembantu Perintah dengan penjelasan rinci tentang perintah.
 
 /settings 
-- Get Settings dashboard of a group. You can manage Auth Users Mode. Commands Mode from here.
+- Dapatkan dasbor Pengaturan grup. Anda dapat mengelola Mode Pengguna Auth. Mode Perintah dari sini.
 
 /ping
-- Ping the Bot and check Ram, Cpu etc stats of Tiana.""",
+- Ping Bot dan periksa statistik Ram, Cpu dll dari Eiko.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
@@ -645,7 +644,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
         )
     elif query.data == "tiana_musicd":
         query.message.edit_text(
-            text=""" *Berikut adalah bantuan untuk Perintah Ekstra*:
+            text="""✗ *Berikut adalah bantuan untuk Perintah Ekstra*:
 
 
 
@@ -670,20 +669,15 @@ Tiana has a additional feature for non-admin users who want to use admin command
         )
     elif query.data == "tiana_about":
         query.message.edit_text(
-            text=f"""{BOT_NAME} itu online sejak Juli 2022 dan terus diperbarui!
-            
-Bot Admins
+            text=f"""{BOT_NAME} itu online sejak Juli 2022 dan terus diperbarui!           
+Bot Admin
                        
-• @{OWNER_USERNAME}, pembuat bot dan pengembang utama.
+• @{OWNER_USERNAME}, pembuat bot dan pengembang utama.            
+• Seorang Fotografer sekaligus mahasiswa Universitas Al-Azhar Cairo Mesir.
             
-• Seorang Fotografer sekaligus mahasiswa Universitas Al-Azhar Cairo Mesir 🇪🇬.
-            
-Support
-            
-• [Klik Disini](https://t.me/{SUPPORT_CHAT}) untuk berkonsultasi dengan daftar Suporter Resmi bot yang diperbarui.
-            
-• Terima kasih kepada semua donor kami untuk mendukung server dan biaya pengembangan dan semua orang yang telah melaporkan bug atau menyarankan fitur baru.
-            
+Support            
+• [Klik Disini](https://t.me/{SUPPORT_CHAT}) untuk berkonsultasi dengan daftar Suporter Resmi bot yang diperbarui.            
+• Terima kasih kepada semua donor kami untuk mendukung server dan biaya pengembangan dan semua orang yang telah melaporkan bug atau menyarankan fitur baru.           
 • Kami juga berterima kasih kepada semua grup yang mengandalkan Bot kami untuk layanan ini, kami harap Anda akan selalu menyukainya: kami terus bekerja untuk meningkatkannya!""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
