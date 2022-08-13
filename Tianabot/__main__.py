@@ -669,7 +669,8 @@ Eiko memiliki fitur tambahan untuk pengguna non-admin yang ingin menggunakan per
         )
     elif query.data == "tiana_about":
         query.message.edit_text(
-            text=f"""{BOT_NAME} itu online sejak Juli 2022 dan terus diperbarui!           
+            text=f"""{BOT_NAME} itu online sejak Juli 2022 dan terus diperbarui!!           
+
 Bot Admin
                        
 • @{OWNER_USERNAME}, pembuat bot dan pengembang utama.            
@@ -715,7 +716,7 @@ Support
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="📄 𝗦𝘂𝗺𝗯𝗲𝗿", url="github.com/Prince-Botz/Tianabot"),                 
+                    InlineKeyboardButton(text="📄 𝗦𝘂𝗺𝗯𝗲𝗿", url="github.com/EmiliaTzy/EikoRobot"),                 
                     InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_"),
                  ]    
                 ]
