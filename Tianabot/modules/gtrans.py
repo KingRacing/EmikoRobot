@@ -15,21 +15,21 @@ from Tianabot.modules.disable import DisableAbleCommandHandler
 
 
 __help__ = """ 
-*Google Translate Commands:*
+*Perintah Google Translate:*
 
-/tr - (or /tl) as a reply to a message, translates it to English.
+/tr - (atau /tl) balas ke pesan, untuk menerjemahkan ke Inggris.
 
-/tr - <lang>: translates to <lang>
+/tr - <bahasa>: terjemahkan ke <bahasa>
 
-/langs - get a list of supported languages for translation.
+/langs - dapatkan daftar bahasa yang didukung untuk terjemahan.
 
-*I can convert text to voice and voice to text..*
+*Saya dapat mengonversi teks menjadi suara dan suara menjadi teks..*
 
-/tts - <lang code> Reply to any message to get text to speech output
+/tts - <kode bahasa> Balas pesan apa pun untuk mendapatkan output teks ke ucapan
 
-/stt - Type in reply to a voice message(support english only) to extract text from it.
+/stt - Ketik membalas pesan suara(hanya mendukung bahasa Inggris) untuk diekstrak ke teks.
 
-*Language Codes*
+*Kode Bahasa*
 
 af,am,ar,az,be,bg,bn,bs,ca,ceb,co,cs,cy,da,de,el,en,eo,es,
 et,eu,fa,fi,fr,fy,ga,gd,gl,gu,ha,haw,hi,hmn,hr,ht,hu,hy,
@@ -49,7 +49,7 @@ trans = Translator()
 async def translate(_, message: Message) -> None:
     reply_msg = message.reply_to_message
     if not reply_msg:
-        await message.reply_text("Reply to a message to translate it!")
+        await message.reply_text("Balas ke pesan untuk menerjemahkan")
         return
     if reply_msg.caption:
         to_translate = reply_msg.caption
@@ -68,7 +68,7 @@ async def translate(_, message: Message) -> None:
         dest = "en"
     translation = await trans(to_translate, sourcelang=source, targetlang=dest)
     reply = (
-        f"<b>Translated from {source} to {dest}</b>:\n"
+        f"<b>Menerjemahkan dari {source} ke {dest}</b>:\n"
         f"<code>{translation.text}</code>"
     )
 
@@ -77,12 +77,12 @@ async def translate(_, message: Message) -> None:
 
 def languages(update: Update, context: CallbackContext) -> None:
     update.effective_message.reply_text(
-        "Click on the button below to see the list of supported language codes.",
+        "Klik tombol di bawah untuk melihat daftar kode bahasa yang didukung.",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="Language codes",
+                        text="Kode Bahasa",
                         url="https://telegra.ph/Lang-Codes-03-19-3",
                     ),
                 ],
