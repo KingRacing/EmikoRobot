@@ -58,6 +58,8 @@ Baca [Dokumen](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) untuk Deskr
 <h4>Klik tombol dibawah ini untuk deploy bot manajemen eiko dari Heroku!</h4>    
 <p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/EikoRobot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=RW1pbGlhVHp5L0Vpa29Sb2JvdCBtYWlu"><img src="https://telegra.ph/file/70966bb4b212649afc8dc.jpg"/></a></p>
+
 <h4>Klik tombol dibawah ini untuk deploy bot music eiko dari Heroku!</h4>    
 <p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/Musikku"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p> 
 </details>
