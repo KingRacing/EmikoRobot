@@ -50,14 +50,14 @@ def promote(update: Update, context: CallbackContext) -> str:
         not (promoter.can_promote_members or promoter.status == "creator")
         and user.id not in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that!")
+        message.reply_text("Anda tidak memiliki hak yang diperlukan untuk melakukan itu!")
         return
 
     user_id = extract_user(message, args)
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Anda sepertinya tidak merujuk ke pengguna atau ID yang ditentukan salah.."
         )
         return
 
@@ -67,11 +67,11 @@ def promote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status == "administrator" or user_member.status == "creator":
-        message.reply_text("How am I meant to promote someone that's already an admin?")
+        message.reply_text("Bagaimana saya mempromosikan seseorang yang sudah menjadi admin?")
         return
 
     if user_id == bot.id:
-        message.reply_text("I can't promote myself! Get an admin to do it for me.")
+        message.reply_text("Saya tidak bisa mempromosikan diri saya sendiri! Dapatkan admin untuk melakukannya untuk saya.")
         return
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -92,22 +92,22 @@ def promote(update: Update, context: CallbackContext) -> str:
         )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
-            message.reply_text("I can't promote someone who isn't in the group.")
+            message.reply_text("Saya tidak dapat mempromosikan seseorang yang tidak ada dalam grup.")
         else:
             message.reply_text("An error occured while promoting.")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully promoted <b>{user_member.user.first_name or user_id}</b>!",
+        f"Berhasil Mempromosikan <b>{user_member.user.first_name or user_id}</b>!",
         parse_mode=ParseMode.HTML,
     )
 
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#PROMOTED\n"
+        f"#PROMOSI\n"
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+        f"<b>Pengguna:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
     )
 
     return log_message
@@ -130,7 +130,7 @@ def demote(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Anda sepertinya tidak merujuk ke pengguna atau ID yang ditentukan salah.."
         )
         return
 
@@ -140,15 +140,15 @@ def demote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status == "creator":
-        message.reply_text("This person CREATED the chat, how would I demote them?")
+        message.reply_text("Orang ini Yang Membuat obrolan, bagaimana saya menurunkannya?")
         return
 
     if not user_member.status == "administrator":
-        message.reply_text("Can't demote what wasn't promoted!")
+        message.reply_text("Tidak dapat menurunkan apa yang tidak dipromosikan!")
         return
 
     if user_id == bot.id:
-        message.reply_text("I can't demote myself! Get an admin to do it for me.")
+        message.reply_text("Saya tidak bisa menurunkan diri saya sendiri! Dapatkan admin untuk melakukannya untuk saya.")
         return
 
     try:
@@ -173,16 +173,16 @@ def demote(update: Update, context: CallbackContext) -> str:
 
         log_message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
-            f"#DEMOTED\n"
+            f"#PENURUNAN\n"
             f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+            f"<b>Pemgguna:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
         )
 
         return log_message
     except BadRequest:
         message.reply_text(
-            "Could not demote. I might not be admin, or the admin status was appointed by another"
-            " user, so I can't act upon them!"
+            "Tidak dapat menurunkan. Saya mungkin bukan admin, atau status admin ditunjuk oleh pengguna lain"
+            " jadi saya tidak bisa menindaklanjutinya!"
         )
         return
 
@@ -195,7 +195,7 @@ def refresh_admin(update, _):
     except KeyError:
         pass
 
-    update.effective_message.reply_text("Admins cache refreshed!")
+    update.effective_message.reply_text("Cache admin disegarkan!")
 
 
 @run_async
@@ -218,47 +218,47 @@ def set_title(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Anda sepertinya tidak merujuk ke pengguna atau ID yang ditentukan salah.."
         )
         return
 
     if user_member.status == "creator":
         message.reply_text(
-            "This person CREATED the chat, how can i set custom title for him?"
+            "Orang ini yang membuat obrolan, bagaimana saya bisa mengatur judul khusus untuknya?"
         )
         return
 
     if user_member.status != "administrator":
         message.reply_text(
-            "Can't set title for non-admins!\nPromote them first to set custom title!"
+            "Tidak dapat menyetel judul untuk non-admin!\nPromosikan mereka yang pertama menetapkan judul khusus!"
         )
         return
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't set my own title myself! Get the one who made me admin to do it for me."
+            "Saya tidak dapat menetapkan judul saya sendiri! Dapatkan orang yang menjadikan saya admin untuk melakukannya untuk saya."
         )
         return
 
     if not title:
-        message.reply_text("Setting blank title doesn't do anything!")
+        message.reply_text("Mengatur judul kosong tidak melakukan apa-apa!")
         return
 
     if len(title) > 16:
         message.reply_text(
-            "The title length is longer than 16 characters.\nTruncating it to 16 characters."
+            "Panjang judul lebih dari 16 karakter.\nMemotongnya menjadi 16 karakter."
         )
 
     try:
         bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
     except BadRequest:
-        message.reply_text("I can't set custom title for admins that I didn't promote!")
+        message.reply_text("Saya tidak dapat mengatur judul khusus untuk admin yang tidak saya promosikan!")
         return
 
     bot.sendMessage(
         chat.id,
-        f"Sucessfully set title for <code>{user_member.user.first_name or user_id}</code> "
-        f"to <code>{html.escape(title[:16])}</code>!",
+        f"Berhasil menetapkan judul untuk <code>{user_member.user.first_name or user_id}</code> "
+        f"ke <code>{html.escape(title[:16])}</code>!",
         parse_mode=ParseMode.HTML,
     )
 
@@ -273,7 +273,7 @@ def setchatpic(update, context):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        msg.reply_text("You are missing right to change group info!")
+        msg.reply_text("Anda kehilangan hak untuk mengubah info grup!")
         return
 
     if msg.reply_to_message:
@@ -282,15 +282,15 @@ def setchatpic(update, context):
         elif msg.reply_to_message.document:
             pic_id = msg.reply_to_message.document.file_id
         else:
-            msg.reply_text("You can only set some photo as chat pic!")
+            msg.reply_text("Anda hanya dapat mengatur beberapa foto sebagai gambar obrolan!")
             return
-        dlmsg = msg.reply_text("Just a sec...")
+        dlmsg = msg.reply_text("Hanya beberapa saat...")
         tpic = context.bot.get_file(pic_id)
         tpic.download("gpic.png")
         try:
             with open("gpic.png", "rb") as chatp:
                 context.bot.set_chat_photo(int(chat.id), photo=chatp)
-                msg.reply_text("Successfully set new chatpic!")
+                msg.reply_text("Berhasil mengatur foto grup baru!")
         except BadRequest as excp:
             msg.reply_text(f"Error! {excp.message}")
         finally:
@@ -298,7 +298,7 @@ def setchatpic(update, context):
             if os.path.isfile("gpic.png"):
                 os.remove("gpic.png")
     else:
-        msg.reply_text("Reply to some photo or file to set new chat pic!")
+        msg.reply_text("Balas ke beberapa foto atau file untuk mengatur foto obrolan baru!")
 
 
 @run_async
@@ -311,11 +311,11 @@ def rmchatpic(update, context):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        msg.reply_text("You don't have enough rights to delete group photo")
+        msg.reply_text("Anda tidak memiliki cukup hak untuk menghapus foto grup")
         return
     try:
         context.bot.delete_chat_photo(int(chat.id))
-        msg.reply_text("Successfully deleted chat's profile photo!")
+        msg.reply_text("Berhasil menghapus foto profil obrolan!")
     except BadRequest as excp:
         msg.reply_text(f"Error! {excp.message}.")
         return
@@ -332,18 +332,18 @@ def setchat_title(update, context):
     args = context.args
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        msg.reply_text("You don't have enough rights to change chat info!")
+        msg.reply_text("Anda tidak memiliki cukup hak untuk mengubah info obrolan!")
         return
 
     title = " ".join(args)
     if not title:
-        msg.reply_text("Enter some text to set new title in your chat!")
+        msg.reply_text("Masukkan beberapa teks untuk menetapkan judul baru di obrolan Anda!")
         return
 
     try:
         context.bot.set_chat_title(int(chat.id), str(title))
         msg.reply_text(
-            f"Successfully set <b>{title}</b> as new chat title!",
+            f"Berhasil Mengatur <b>{title}</b> sebagai judul obrolan baru!",
             parse_mode=ParseMode.HTML,
         )
     except BadRequest as excp:
@@ -361,27 +361,27 @@ def set_sticker(update, context):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        return msg.reply_text("You're missing rights to change chat info!")
+        return msg.reply_text("Anda kehilangan hak untuk mengubah info grup!")
 
     if msg.reply_to_message:
         if not msg.reply_to_message.sticker:
             return msg.reply_text(
-                "You need to reply to some sticker to set chat sticker set!"
+                "Anda perlu membalas beberapa stiker untuk mengatur set stiker obrolan!"
             )
         stkr = msg.reply_to_message.sticker.set_name
         try:
             context.bot.set_chat_sticker_set(chat.id, stkr)
             msg.reply_text(
-                f"Successfully set new group stickers in {chat.title}!")
+                f"Berhasil mengatur stiker grup baru di {chat.title}!")
         except BadRequest as excp:
             if excp.message == "Participants_too_few":
                 return msg.reply_text(
-                    "Sorry, due to telegram restrictions chat needs to have minimum 100 members before they can have group stickers!"
+                    "Maaf, karena pembatasan telegram, obrolan harus memiliki minimal 100 anggota sebelum mereka dapat memiliki stiker grup!"
                 )
             msg.reply_text(f"Error! {excp.message}.")
     else:
         msg.reply_text(
-            "You need to reply to some sticker to set chat sticker set!")
+            "Anda perlu membalas beberapa stiker untuk mengatur set stiker obrolan!")
 
 
 @run_async
@@ -394,26 +394,26 @@ def set_desc(update, context):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        return msg.reply_text("You're missing rights to change chat info!")
+        return msg.reply_text("Anda kehilangan hak untuk mengubah info grup!")
 
     tesc = msg.text.split(None, 1)
     if len(tesc) >= 2:
         desc = tesc[1]
     else:
-        return msg.reply_text("Setting empty description won't do anything!")
+        return msg.reply_text("Menyetel deskripsi kosong tidak akan menghasilkan apa-apa!")
     try:
         if len(desc) > 255:
             return msg.reply_text(
-                "Description must needs to be under 255 characters!")
+                "Deskripsi harus kurang dari 255 karakter!")
         context.bot.set_chat_description(chat.id, desc)
         msg.reply_text(
-            f"Successfully updated chat description in {chat.title}!")
+            f"Berhasil memperbarui deskripsi obrolan di {chat.title}!")
     except BadRequest as excp:
         msg.reply_text(f"Error! {excp.message}.")
 
 
 def __chat_settings__(chat_id, user_id):
-    return "You are *admin*: `{}`".format(
+    return "Anda adalah *admin*: `{}`".format(
         dispatcher.bot.get_chat_member(chat_id, user_id).status
         in ("administrator", "creator")
     )
@@ -505,11 +505,11 @@ def invite(update: Update, context: CallbackContext):
             update.effective_message.reply_text(invitelink)
         else:
             update.effective_message.reply_text(
-                "I don't have access to the invite link, try changing my permissions!"
+                "Saya tidak memiliki akses ke tautan undangan, coba ubah izin saya!"
             )
     else:
         update.effective_message.reply_text(
-            "I can only give you invite links for supergroups and channels, sorry!"
+            "Saya hanya bisa memberi Anda tautan undangan untuk grup dan saluran super, maaf!"
         )
 
 
@@ -522,7 +522,7 @@ def adminlist(update, context):
     bot = context.bot
 
     if update.effective_message.chat.type == "private":
-        send_message(update.effective_message, "This command only works in Groups.")
+        send_message(update.effective_message, "Perintah ini hanya berfungsi di Grup.")
         return
 
     chat = update.effective_chat
@@ -531,15 +531,15 @@ def adminlist(update, context):
 
     try:
         msg = update.effective_message.reply_text(
-            "Fetching group admins...", parse_mode=ParseMode.HTML
+            "Mengambil admin grup...", parse_mode=ParseMode.HTML
         )
     except BadRequest:
         msg = update.effective_message.reply_text(
-            "Fetching group admins...", quote=False, parse_mode=ParseMode.HTML
+            "Mengambil admin grup...", quote=False, parse_mode=ParseMode.HTML
         )
 
     administrators = bot.getChatAdministrators(chat_id)
-    text = "Admins in <b>{}</b>:".format(html.escape(update.effective_chat.title))
+    text = "AdminAdmin dalam <b>{}</b>:".format(html.escape(update.effective_chat.title))
 
     bot_admin_list = []
 
@@ -549,7 +549,7 @@ def adminlist(update, context):
         custom_title = admin.custom_title
 
         if user.first_name == "":
-            name = "☠ Deleted Account"
+            name = "☠ Akun Terhapus"
         else:
             name = "{}".format(
                 mention_html(
@@ -565,13 +565,13 @@ def adminlist(update, context):
         # if user.username:
         #    name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n 👑 Creator:"
+            text += "\n 👑 Pemilik:"
             text += "\n<code> • </code>{}\n".format(name)
 
             if custom_title:
                 text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
 
-    text += "\n🔱 Admins:"
+    text += "\n🔱 Admin:"
 
     custom_admin_list = {}
     normal_admin_list = []
@@ -582,7 +582,7 @@ def adminlist(update, context):
         custom_title = admin.custom_title
 
         if user.first_name == "":
-            name = "☠ Deleted Account"
+            name = "☠ Akun Terhapus"
         else:
             name = "{}".format(
                 mention_html(
@@ -617,7 +617,7 @@ def adminlist(update, context):
             text += "\n<code> • </code>{}".format(admin)
         text += "\n"
 
-    text += "\n🤖 Bots:"
+    text += "\n🤖 Bot:"
     for each_bot in bot_admin_list:
         text += "\n<code> • </code>{}".format(each_bot)
 
@@ -628,41 +628,41 @@ def adminlist(update, context):
 
 
 __help__ = """
- ❍ /admins*:* list of admins in the chat
+ ❍ /admins*:* daftar admin di chat
 
-*Admins only:*
- ❍ /pin*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
- ❍ /unpin*:* unpins the currently pinned message
- ❍ /invitelink*:* gets invitelink
- ❍ /promote*:* promotes the user
- ❍ /demote*:* demotes the user
- ❍ /title <title here>*:* sets a custom title for an admin that the bot promoted
- ❍ /admincache*:* force refresh the admins list
- ❍ /antispam <on/off/yes/no>*:* Will toggle our antispam tech or return your current settings.
- ❍ /setgtitle <newtitle>*:* Sets new chat title in your group.
- ❍ /setgpic*:* As a reply to file or photo to set group profile pic!
- ❍ /delgpic*:* Same as above but to remove group profile pic.
- ❍ /setsticker*:* As a reply to some sticker to set it as group sticker set!
- ❍ /setdescription <description>*:* Sets new chat description in group.
- ❍ /import: Reply to the backup file for the butler group to import as much as possible, making transfers very easy! 
- ❍ /export: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) 
- ❍ /logchannel: get log channel info
- ❍ /setlog: set the log channel.
- ❍ /unsetlog: unset the log channel.
- ❍ /del: deletes the message you replied to
- ❍ /purge: deletes all messages between this and the replied to message.
- ❍ /purge <integer X>: deletes the replied message, and X messages following it if replied to a message.
- ❍ /rules: get the rules for this chat.
- ❍ /setrules <your rules here>: set the rules for this chat.
- ❍ /clearrules: clear the rules for this chat.
+*Hanya Admin:*
+ ❍ /pin*:* secara diam-diam menyematkan pesan yang dibalas - tambahkan 'keras' atau 'beri tahu' untuk memberikan pemberitahuan kepada pengguna
+ ❍ /unpin*:* melepas pin pesan yang saat ini disematkan
+ ❍ /invitelink*:* mendapat invitelink
+ ❍ /promote*:* mempromosikan pengguna
+ ❍ /demote*:* menurunkan pengguna
+ ❍ /title <nama judul>*:* menetapkan judul khusus untuk admin yang dipromosikan bot
+ ❍ /admincache*:* paksa refresh daftar admin
+ ❍ /antispam <on,off,yes,no>*:* Akan mengaktifkan teknologi antispam kami atau mengembalikan pengaturan Anda saat ini.
+ ❍ /setgtitle <Judul Baru>*:* Mengatur judul obrolan baru di grup Anda.
+ ❍ /setgpic*:* Sebagai balasan ke file atau foto untuk mengatur gambar profil grup!
+ ❍ /delgpic*:* Sama seperti di atas tetapi untuk menghapus foto profil grup.
+ ❍ /setsticker*:* Sebagai balasan untuk beberapa stiker untuk ditetapkan sebagai set stiker grup!
+ ❍ /setdescription <Deskripsi>*:* Mengatur deskripsi obrolan baru di grup.
+ ❍ /import: Balas ke file cadangan untuk grup kepala pelayan untuk diimpor sebanyak mungkin, membuat transfer menjadi sangat mudah!
+ ❍ /export: Ekspor data grup, yang akan diekspor adalah: aturan, catatan (dokumen, gambar, musik, video, audio, suara, teks, tombol teks)
+ ❍ /logchannel: dapatkan info saluran log
+ ❍ /setlog: mengatur saluran log.
+ ❍ /unsetlog: hapus saluran log.
+ ❍ /del: menghapus pesan yang Anda balas
+ ❍ /purge: menghapus semua pesan antara ini dan pesan yang dibalas.
+ ❍ /purge : menghapus pesan yang dibalas, dan X pesan yang mengikutinya jika membalas pesan.
+ ❍ /rules: dapatkan aturan untuk obrolan ini.
+ ❍ /setrules : tetapkan aturan untuk obrolan ini.
+ ❍ /clearrules: hapus aturan untuk obrolan ini.
 
-Setting the log channel is done by:
-❍ adding the bot to the desired channel (as an admin!)
-❍ sending /setlog in the channel
-❍ forwarding the /setlog to the group
+Pengaturan saluran log dilakukan dengan:
+❍ menambahkan bot ke saluran yang diinginkan (sebagai admin!)
+❍ mengirim / setlog di saluran
+❍ meneruskan /setlog ke grup
 
-*Note:* Night Mode chats get Automatically closed at 12 am(IST)
-and Automatically openned at 6 am(IST) To Prevent Night Spams.
+*Catatan:* Obrolan Mode Malam ditutup secara otomatis pada pukul 12 pagi (IST)
+dan Secara otomatis dibuka pada pukul 6 pagi (IST) Untuk Mencegah Spam Malam.
 
 """
 
