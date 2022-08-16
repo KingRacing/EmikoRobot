@@ -247,7 +247,7 @@ def start(update: Update, context: CallbackContext):
                     sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(
                  [
-                  [InlineKeyboardButton(text="📄 Sumber Kode", url="https://github.com/prince-botz/tianabot"), 
+                  [InlineKeyboardButton(text="📄 Sumber Kode", url="https://github.com/EmiliaTzy/EikoRobot"), 
                    InlineKeyboardButton(text="🫂 Support", url=f"https://t.me/{SUPPORT_CHAT}")]
                  ]
               ),
@@ -325,7 +325,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "「 Hᴇʟᴘ ᴏғ *{}* 」:\n".format(
+                "「 Bantuan Dari *{}* 」:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
