@@ -74,9 +74,9 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
     else:
         pairs += [
                   [
-                    EqInlineKeyboardButton("╰✰ Cʜᴀɴɴᴇʟ", url="t.me/TianaxUpdates"), 
-                    EqInlineKeyboardButton("「 Bᴀᴄᴋ 」", callback_data="tiana_"), 
-                    EqInlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ ✰╮", url="t.me/TianaxSupport")
+                    EqInlineKeyboardButton("╰✰ Cʜᴀɴɴᴇʟ", url="t.me/CatatanAz"), 
+                    EqInlineKeyboardButton("「 𝐾𝑒𝑚𝑏𝑎𝑙𝑖 」", callback_data="tiana_"), 
+                    EqInlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ ✰╮", url="t.me/CatatanAzDay")
                   ]
                  ]
 
