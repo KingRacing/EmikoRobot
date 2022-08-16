@@ -55,7 +55,7 @@ async def couple(_, message):
 
             couple_selection_message = f"""**Pasangan Hari ini:**
 {c1_mention} + {c2_mention} = ❤️
-__Pasangan baru hari ini dapat dipilih pada pukul 12AM {tomorrow}__"""
+__Pasangan baru hari ini dapat dipilih pada pukul 00.00 {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(chat_id, today, couple)
@@ -67,7 +67,7 @@ __Pasangan baru hari ini dapat dipilih pada pukul 12AM {tomorrow}__"""
             c2_name = (await app.get_users(c2_id)).first_name
             couple_selection_message = f"""Pasangan Hari Ini:
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️
-__Pasangan baru hari ini dapat dipilih pada pukul 12AM {tomorrow}__"""
+__Pasangan baru hari ini dapat dipilih pada pukul 00.00 {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
