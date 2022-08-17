@@ -10,21 +10,21 @@ from Tianabot.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update, Message
 from telegram.ext import CallbackContext, run_async
 
-info_btn = "More Information"
+info_btn = "Informasi Selebihnya"
 kaizoku_btn = "Kaizoku ☠️"
 kayo_btn = "Kayo 🏴‍☠️"
 prequel_btn = "⬅️ Prequel"
 sequel_btn = "Sequel ➡️"
-close_btn = "Close ❌"
+close_btn = "Tutup ❌"
 
 
 def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:
         description = description[0:500] + "...."
-        msg += f"\n*Description*: _{description}_[Read More]({info})"
+        msg += f"\n*Deskripsi*: _{description}_[Baca Selebihnya]({info})"
     else:
-        msg += f"\n*Description*:_{description}_"
+        msg += f"\n*Deskripsi*:_{description}_"
     return msg
 
 
@@ -174,14 +174,14 @@ def airing(update: Update, context: CallbackContext):
     search_str = extract_arg(message)
     if not search_str:
         update.effective_message.reply_text(
-            "Tell Anime Name :) ( /airing <anime name>)"
+            "Beritahu Nama Anime :) ( /airing <anime name>)"
         )
         return
-    variables = {"search": search_str}
+    variables = {"mencari": search_str}
     response = requests.post(
         url, json={"query": airing_query, "variables": variables}
     ).json()["data"]["Media"]
-    msg = f"*Name*: *{response['title']['romaji']}*(`{response['title']['native']}`)\n*ID*: `{response['id']}`"
+    msg = f"*Name*: *{response['title']['romaji']}*(`{response['judul']['native']}`)\n*ID*: `{response['id']}`"
     if response["nextAiringEpisode"]:
         time = response["nextAiringEpisode"]["timeUntilAiring"] * 1000
         time = t(time)
@@ -196,14 +196,14 @@ def anime(update: Update, context: CallbackContext):
     message = update.effective_message
     search = extract_arg(message)
     if not search:
-        update.effective_message.reply_text("Format : /anime < anime name >")
+        update.effective_message.reply_text("Format : /anime < nama anime >")
         return
-    variables = {"search": search}
+    variables = {"mencari": search}
     json = requests.post(
         url, json={"query": anime_query, "variables": variables}
     ).json()
     if "errors" in json.keys():
-        update.effective_message.reply_text("Anime not found")
+        update.effective_message.reply_text("Anime tidak ditemukan")
         return
     if json:
         json = json["data"]["Media"]
