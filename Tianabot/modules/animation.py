@@ -82,7 +82,7 @@ kill_you = [
             "------------------>",    
             "------>;(^。^)ノ",
             "(￣ー￣) DED",
-            "**Target killed successfully"
+            "**Target Berhasil Dibantai"
 ]
 
 
@@ -153,7 +153,7 @@ love_siren = [
         "🤯",
         "💔",
         "❤",
-        "I Love You❤"
+        "Aku Sayang Kamu❤"
 ]
 
 
@@ -263,11 +263,11 @@ police_ani =  [
 @run_async
 def brainanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text('PROCESSING...') 
+    msg = update.effective_message.reply_text('MEMPROSES...') 
     for x in range(EDIT_TIMES):
         msg.edit_text(brain_chain[x%14])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('YOU PUT BRAIN IN DUSTBIN')
+    msg.edit_text('ANDA MENEMPATKAN OTAK DI KANDANG SAPI')
 
 
 
@@ -289,11 +289,11 @@ def clockanimation(update: Update, context: CallbackContext):
 @run_async
 def policeanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text('CALL TIANA POLICE') 
+    msg = update.effective_message.reply_text('PANGGIL POLISI EIKO') 
     for x in range(EDIT_TIMES):
         msg.edit_text(police_ani[x%11])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('TIANA POLICE IS HERE')
+    msg.edit_text('POLISI EIKO SUDAH DISINI😎')
 
 
 
@@ -319,7 +319,7 @@ def bombs(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(bomb_ettu[x%9])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('RIP PLOX...')
+    msg.edit_text('RIP BUAT KALIAN...')
 
 
 
@@ -335,11 +335,11 @@ def bombs(update: Update, context: CallbackContext):
 @run_async
 def hack(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text('Target selected') 
+    msg = update.effective_message.reply_text('Target terpilih') 
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x%18])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("`pdf created click link below to download data\n\n😂 Don't worry only i can open this 😎😎.. If u don't Believe try to download` 🙂\n\nhttps://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing")
+    msg.edit_text("`pdf dibuat klik tautan di bawah ini untuk mengunduh data\n\n Jangan khawatir hanya saya yang bisa membuka ini 🌚🌚.. Kalo ga percaya coba download` 🙂\n\nhttps://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing")
 
 
 
@@ -352,11 +352,11 @@ def hack(update: Update, context: CallbackContext):
 @run_async
 def love(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text('Wait For Magic') 
+    msg = update.effective_message.reply_text('Tunggu Sihirku') 
     for x in range(EDIT_TIMES):
         msg.edit_text(love_siren[x%35])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('True Love💞')
+    msg.edit_text('Cinta Sejati💞')
 
 
 
