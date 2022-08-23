@@ -165,12 +165,12 @@ def get_id(update: Update, context: CallbackContext):
 
     elif chat.type == "private":
         msg.reply_text(
-            f"Your id is <code>{chat.id}</code>.", parse_mode=ParseMode.HTML,
+            f"ID anda <code>{chat.id}</code>.", parse_mode=ParseMode.HTML,
         )
 
     else:
         msg.reply_text(
-            f"This group's id is <code>{chat.id}</code>.", parse_mode=ParseMode.HTML,
+            f"ID grup <code>{chat.id}</code>.", parse_mode=ParseMode.HTML,
         )
 
 
@@ -193,22 +193,22 @@ async def group_info(event) -> None:
         )
         return
     msg = f"**ID**: `{entity.id}`"
-    msg += f"\n**Title**: `{entity.title}`"
+    msg += f"\n**Judul**: `{entity.title}`"
     msg += f"\n**Datacenter**: `{entity.photo.dc_id}`"
     msg += f"\n**Video PFP**: `{entity.photo.has_video}`"
     msg += f"\n**Supergroup**: `{entity.megagroup}`"
-    msg += f"\n**Restricted**: `{entity.restricted}`"
+    msg += f"\n**Terbatas**: `{entity.restricted}`"
     msg += f"\n**Scam**: `{entity.scam}`"
-    msg += f"\n**Slowmode**: `{entity.slowmode_enabled}`"
+    msg += f"\n**Mode Slow**: `{entity.slowmode_enabled}`"
     if entity.username:
         msg += f"\n**Username**: {entity.username}"
     msg += "\n\n**Member Stats:**"
     msg += f"\n`Admins:` `{len(totallist)}`"
-    msg += f"\n`Users`: `{totallist.total}`"
-    msg += "\n\n**Admins List:**"
+    msg += f"\n`Pengguna`: `{totallist.total}`"
+    msg += "\n\n**Daftar Admin:**"
     for x in totallist:
         msg += f"\n• [{x.id}](tg://user?id={x.id})"
-    msg += f"\n\n**Description**:\n`{ch_full.full_chat.about}`"
+    msg += f"\n\n**Deskripsi**:\n`{ch_full.full_chat.about}`"
     await event.reply(msg)
 
 
@@ -251,16 +251,16 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Getting info...</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Mendapatkan info...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"╔═━「<b> Appraisal results:</b> 」\n"
+        f"╔═━「<b> Hasil penilaian:</b> 」\n"
         f"✪ ID: <code>{user.id}</code>\n"
-        f"✪ First Name: {html.escape(user.first_name)}"
+        f"✪ Nama Depan: {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\n✪ Last Name: {html.escape(user.last_name)}"
+        text += f"\n✪ Nama Belakang: {html.escape(user.last_name)}"
 
     if user.username:
         text += f"\n✪ Username: @{html.escape(user.username)}"
@@ -268,7 +268,7 @@ def info(update: Update, context: CallbackContext):
     text += f"\n✪ Userlink: {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n✪ Presence: <code>{}</code>"
+        _stext = "\n✪ Kehadiran: <code>{}</code>"
 
         afk_st = is_afk(user.id)
         if afk_st:
@@ -277,46 +277,46 @@ def info(update: Update, context: CallbackContext):
             status = status = bot.get_chat_member(chat.id, user.id).status
             if status:
                 if status in {"left", "kicked"}:
-                    text += _stext.format("Not here")
+                    text += _stext.format("Tidak Disini")
                 elif status == "member":
-                    text += _stext.format("Detected")
+                    text += _stext.format("Terdeteksi")
                 elif status in {"administrator", "creator"}:
                     text += _stext.format("Admin")
     if user_id not in [bot.id, 777000, 1087968824]:
         userhp = hpmanager(user)
-        text += f"\n\n<b>Health:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
+        text += f"\n\n<b>Kesehatan:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
     try:
         spamwtc = sw.get_ban(int(user.id))
         if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @SpamWatchSupport"
+            text += "\n\n<b>Orang ini adalah Spamwatched!</b>"
+            text += f"\nAlasan: <pre>{spamwtc.reason}</pre>"
+            text += "\nBamding di @SpamWatchSupport"
     except:
         pass  # don't crash if api is down somehow...
 
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe Disaster level of this person is 'King'."
+        text += "\n\nTingkat Lencana orang ini adalah 'Owner'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of 'Prince'."
+        text += "\n\nPengguna ini adalah anggota dari 'Pangeran'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is 'Emperor'."
+        text += "\n\nTingkat Lencana orang ini adalah 'Kaisar'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'Governor'."
+        text += "\n\nTingkat Lencana orang ini adalah 'Gubernur'."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is 'Captain'."
+        text += "\n\nTingkat Lencana orang ini adalah 'Kapten'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe Disaster level of this person is 'Soldier'."
+        text += "\n\nTingkat Lencana orang ini adalah 'Tentara'."
         disaster_level_present = True
-    elif user.id == 1829047705:
-         text += "\n\nOwner Of A Bot. Queen Of @excrybaby. Bot Name Inspired From 'JoJo'."
+    elif user.id == 1221249722:
+         text += "\n\nOwner Bot. Ratunya adalah @tth_kiya98. Nama Bot Terinspirasi Dari Karakter Film."
          disaster_level_present = True
 
     try:
@@ -328,7 +328,7 @@ def info(update: Update, context: CallbackContext):
             result = result.json()["result"]
             if "custom_title" in result.keys():
                 custom_title = result["custom_title"]
-                text += f"\n\nTitle:\n<b>{custom_title}</b>"
+                text += f"\n\nJudul:\n<b>{custom_title}</b>"
     except BadRequest:
         pass
 
@@ -353,9 +353,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/YurikoLogger/5"),
+                                "Kesehatan", url="https://t.me/YurikoLogger/5"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/YurikoLogger/6")
+                                "Lencana", url="https://t.me/YurikoLogger/6")
                         ],
                     ]
                 ),
@@ -371,9 +371,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/YurikoLogger/5"),
+                                "Kesehatan", url="https://t.me/YurikoLogger/5"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/YurikoLogger/6")
+                                "Lencana", url="https://t.me/YurikoLogger/6")
                         ],
                     ]
                 ),
@@ -444,7 +444,7 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>╔═━「 Current Tiana's Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>╔═━「 Statistik Eiko Saat Ini 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(
         result,
