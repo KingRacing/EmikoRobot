@@ -28,7 +28,7 @@ async def _(event):
         return
     if event.is_group:
      if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-       await event.reply("🚨 Need Admin Pewer.. You can't use this command.. But you can use in my pm")
+       await event.reply("🚨 Perlu Hak Admin.. Anda tidak dapat menggunakan perintah ini.. Tetapi Anda dapat menggunakan di pm saya")
        return
 
     score_page = "http://static.cricinfo.com/rss/livescores.xml"
@@ -39,6 +39,6 @@ async def _(event):
     for match in result:
         Sed += match.get_text() + "\n\n"
     await event.reply(
-        f"<b><u>Match information gathered successful</b></u>\n\n\n<code>{Sed}</code>",
+        f"<b><u>Informasi pertandingan berhasil dikumpulkan</b></u>\n\n\n<code>{Sed}</code>",
         parse_mode="HTML",
     )
