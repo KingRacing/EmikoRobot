@@ -35,7 +35,7 @@ async def _(event):
     if event.fwd_from:
         return
     
-    webevent = await event.reply("searching........")
+    webevent = await event.reply("mencari........")
     match = event.pattern_match.group(1)
     page = re.findall(r"page=\d+", match)
     try:
@@ -50,14 +50,14 @@ async def _(event):
     msg = ""
     for i in range(len(gresults["links"])):
         try:
-            title = gresults["titles"][i]
-            link = gresults["links"][i]
-            desc = gresults["descriptions"][i]
+            title = gresults["judul"][i]
+            link = gresults["link"][i]
+            desc = gresults["deskripsi"][i]
             msg += f"❍[{title}]({link})\n**{desc}**\n\n"
         except IndexError:
             break
     await webevent.edit(
-        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
+        "**Mencari Sesuatu:**\n`" + match + "`\n\n**Hasil:**\n" + msg, link_preview=False
     )
 
 @register(pattern="^/img (.*)")
@@ -92,7 +92,7 @@ opener.addheaders = [("User-agent", useragent)]
 
 @register(pattern=r"^/reverse(?: |$)(\d*)")
 async def okgoogle(img):
-    """ For .reverse command, Google search images and stickers. """
+    """ Untuk perintah .reverse, gambar dan stiker pencarian Google. """
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
     
@@ -101,15 +101,15 @@ async def okgoogle(img):
         photo = io.BytesIO()
         await tbot.download_media(message, photo)
     else:
-        await img.reply("`Reply to photo or sticker nigger.`")
+        await img.reply("`Balas foto atau stiker negro.`")
         return
 
     if photo:
-        dev = await img.reply("`Processing...`")
+        dev = await img.reply("`Memproses...`")
         try:
             image = Image.open(photo)
         except OSError:
-            await dev.edit("`Unsupported sexuality, most likely.`")
+            await dev.edit("`Seksualitas yang tidak didukung, kemungkinan besar.`")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
@@ -122,11 +122,11 @@ async def okgoogle(img):
 
         if response != 400:
             await dev.edit(
-                "`Image successfully uploaded to Google. Maybe.`"
-                "\n`Parsing source now. Maybe.`"
+                "`Gambar berhasil diunggah ke Google.  Mungkin.`"
+                "\n`Sumber parsing sekarang.  Mungkin.`"
             )
         else:
-            await dev.edit("`Google told me to fuck off.`")
+            await dev.edit("`Google menyuruhku untuk tidur.`")
             return
 
         os.remove(name)
@@ -135,9 +135,9 @@ async def okgoogle(img):
         imgspage = match["similar_images"]
 
         if guess and imgspage:
-            await dev.edit(f"[{guess}]({fetchUrl})\n\n`Looking for this Image...`")
+            await dev.edit(f"[{guess}]({fetchUrl})\n\n`Lihatlah Gambar Ini...`")
         else:
-            await dev.edit("`Can't find this piece of shit.`")
+            await dev.edit("Tidak dapat menemukan potongan rumit ini.`")
             return
 
         if img.pattern_match.group(1):
@@ -263,14 +263,14 @@ async def apk(e):
             "five", "5"
         )
         app_details += (
-            "\n<code>Features :</code> <a href='"
+            "\n<code>Fitur :</code> <a href='"
             + app_link
-            + "'>View in Play Store</a>"
+            + "'>Lihat Di Play Store</a>"
         )
-        app_details += "\n\n===> Tiana Bot <==="
+        app_details += "\n\n===> Eiko Robot <==="
         await e.reply(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
-        await e.reply("No result found in search. Please enter **Valid app name**")
+        await e.reply("Tidak ada hasil yang ditemukan dalam pencarian. Silahkan masukkan **Nama Aplikasi Yang Valid**")
     except Exception as err:
         await e.reply("Exception Occured:- " + str(err))
 
