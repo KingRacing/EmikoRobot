@@ -7,12 +7,12 @@ def send_message(message, text, *args, **kwargs):
     try:
         return message.reply_text(text, *args, **kwargs)
     except BadRequest as err:
-        if str(err) == "Reply message not found":
+        if str(err) == "Pesan balasan tidak ditemukan":
             return message.reply_text(text, quote=False, *args, **kwargs)
 
 
 def typing_action(func):
-    """Sends typing action while processing func command."""
+    """Mengirim tindakan pengetikan saat memproses perintah func."""
 
     @wraps(func)
     def command_func(update, context, *args, **kwargs):
