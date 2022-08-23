@@ -43,13 +43,13 @@ async def convert(
 
     for message in reply_messages:
         if not message.document:
-            return await m.edit("Not document, ABORTED!")
+            return await m.edit("Tidak ada dokumen, Dibatalkan!")
 
         if message.document.mime_type.split("/")[0] != "image":
             return await m.edit("Invalid mime type!")
 
         if message.document.file_size > 5000000:
-            return await m.edit("Size too large, ABORTED!")
+            return await m.edit("Ukuran terlalu besar, Dibatalkan!")
         documents.append(await message.download())
 
     for img_path in documents:
@@ -57,7 +57,7 @@ async def convert(
         img.save(img_path, "JPEG", quality=100)
 
     pdf = BytesIO(img2pdf.convert(documents))
-    pdf.name = "Tianabot.pdf"
+    pdf.name = "EikoRobot.pdf"
 
     if len(main_message.command) >= 2:
         pdf.name = main_message.text.split(None, 1)[1]
@@ -69,10 +69,10 @@ async def convert(
         caption=section(
             "IMG2PDF",
             body={
-                "Title": pdf.name,
-                "Size": f"{pdf.__sizeof__() / (10**6)}MB",
-                "Pages": len(documents),
-                "Took": f"{elapsed}s",
+                "Judul": pdf.name,
+                "Ukuran": f"{pdf.__sizeof__() / (10**6)}MB",
+                "Halaman": len(documents),
+                "Mengambil": f"{elapsed}s",
             },
         ),
     )
@@ -90,10 +90,10 @@ async def img_to_pdf(_, message: Message):
     reply = message.reply_to_message
     if not reply:
         return await message.reply(
-            "Reply to an image (as document) or group of images."
+            "Membalas gambar (sebagai dokumen) atau sekumpulan gambar."
         )
 
-    m = await message.reply_text("Converting..")
+    m = await message.reply_text("Mengkonversi..")
     start_time = time()
 
     if reply.media_group_id:
