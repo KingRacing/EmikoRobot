@@ -102,4 +102,4 @@ __help__ = """
  ❍ /zombies clean *:* Menghapus akun terhapus dari grup.
 """
 
-__mod_name__ = "Zᴏᴍʙɪᴇ"
+__mod_name__ = "Zᴏᴍʙɪᴇ 👻"
