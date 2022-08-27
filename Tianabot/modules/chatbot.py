@@ -46,12 +46,12 @@ def merissarm(update: Update, context: CallbackContext) -> str:
             is_merissa = sql.rem_merissa(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"Merissa Chatbot Disable\n"
+                f"Merissa Chatbot Dinonaktifkan\n"
                 f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             )
         else:
             update.effective_message.edit_text(
-                "Merissa Chatbot disable by {}.".format(
+                "Merissa Chatbot dinonaktifkan oleh {}.".format(
                     mention_html(user.id, user.first_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -79,7 +79,7 @@ def merissaadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Merissa Chatbot enable by {}.".format(
+                "Merissa Chatbot diaktifkan oleh {}.".format(
                     mention_html(user.id, user.first_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -133,7 +133,7 @@ def chatbot(update: Update, context: CallbackContext):
     if message.text and not message.document:
         if not merissa_message(context, message):
             return
-        bot.send_chat_action(chat_id, action="typing")
+        bot.send_chat_action(chat_id, action="mengetik")
         lang = tr.translate(message.text).src
         trtoen = (
             message.text if lang == "en" else tr.translate(message.text, dest="en").text
@@ -142,7 +142,7 @@ def chatbot(update: Update, context: CallbackContext):
         Merissa = requests.get(
             f"https://merissachatbot.tk/api/apikey=5541274045-MERISSArC8rNQ0SK9/Merissa/Prince/message={text}"
         ).json()
-        merissa = Merissa["reply"]
+        merissa = Merissa["membalas"]
         msg = tr.translate(merissa, src="en", dest="hi")
         message.reply_text(msg.text)
 
