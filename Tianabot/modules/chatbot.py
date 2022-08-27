@@ -74,7 +74,7 @@ def merissaadd(update: Update, context: CallbackContext) -> str:
             is_merissa = sql.set_merissa(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"Merissa Chatbot Enable\n"
+                f"Merissa Chatbot Diaktifkan\n"
                 f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             )
         else:
@@ -93,9 +93,9 @@ def merissaadd(update: Update, context: CallbackContext) -> str:
 def merissa(update: Update, context: CallbackContext):
     update.effective_user
     message = update.effective_message
-    msg = """**Welcome To Control Panal Of Merissa ChatBot**
+    msg = """**Selamat Datang Di Panel Kontrol Merissa Chatbot**
 
-**Here You Will Find Two Buttons Select AnyOne Of Them**"""
+**Di sini Anda Akan Menemukan Dua Tombol Pilih Salah Satu Dari Mereka**"""
     keyboard = InlineKeyboardMarkup(
         [
             [
@@ -164,10 +164,10 @@ def list_all_chats(update: Update, context: CallbackContext):
 
 __mod_name__ = "Chatbot 🤖"
 __help__ = """
-Merissa AI ChatBot is the only ai system which can detect & reply upto 200 language's
+Merissa AI ChatBot adalah satu-satunya sistem AI yang dapat mendeteksi & membalas hingga 200 bahasa
 
-❂ `/token` : To get your Merissa Chatbot Token.
-❂ `/chatbot`: To On Or Off ChatBot In Your Chat.
+❂ `/token` : Dapatkan Token Merissa Chatbotmu.
+❂ `/chatbot`: Untuk Mengaktifkan atau Menonaktifkan ChatBot Di Obrolanmu.
 
 *Reports bugs at*: @MerissaxSupport
 *Powered by* @MerissaRobot"""
