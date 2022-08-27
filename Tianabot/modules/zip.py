@@ -215,4 +215,4 @@ Hai, saya dapat mengkonversi file disini..
  ❍ /unzip*:* Balas ke file telegram membongkar dari format .zip 
 """
 
-__mod_name__ = "Zɪᴘᴘᴇʀ​"
+__mod_name__ = "Zɪᴘᴘᴇʀ 🗂"
