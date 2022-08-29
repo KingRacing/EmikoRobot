@@ -1,6 +1,6 @@
 import random
-from EikoBot.events import register
-from EikoBot import telethn
+from TianaBot.events import register
+from TianaBot import telethn
 
 APAKAH_STRING = ["Iya", 
                  "Tidak", 
