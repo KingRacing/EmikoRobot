@@ -76,7 +76,7 @@ async def can_change_info(message):
         isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.change_info
     )
 
-@register(pattern="^/(nightmode|Nightmode|NightMode|kontolmode|KONTOLMODE) ?(.*)")
+@register(pattern="^/(nightmode|Nightmode|NightMode|Nightmode|NIGHTMODE) ?(.*)")
 async def profanity(event):
     if event.fwd_from:
         return
@@ -85,42 +85,42 @@ async def profanity(event):
     input = event.pattern_match.group(2)
     if not event.sender_id == OWNER_ID:
         if not await is_register_admin(event.input_chat, event.sender_id):
-           await event.reply("Only admins can execute this command!")
+           await event.reply("Hanya Admin Yang Bisa Menjalankan Perintah Ini!")
            return
         else:
           if not await can_change_info(message=event):
-            await event.reply("You are missing the following rights to use this command:CanChangeinfo")
+            await event.reply("Anda kehilangan hak berikut untuk menggunakan perintah ini: Ubah Info Grup")
             return
     if not input:
         if is_nightmode_indb(str(event.chat_id)):
                 await event.reply(
-                    "Currently NightMode is Enabled for this Chat"
+                    "Sekarang Mode Malam Dihidupkan Untuk Obrolan Ini"
                 )
                 return
         await event.reply(
-            "Currently NightMode is Disabled for this Chat"
+            "Sekarang Mode Malam Dimatikan Untuk Obrolan Ini"
         )
         return
     if "on" in input:
         if event.is_group:
             if is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "Night Mode is Already Turned ON for this Chat"
+                        "Mode Malam Sudah Dihidupkan Untuk Obrolan Ini"
                     )
                     return
             add_nightmode(str(event.chat_id))
-            await event.reply("NightMode turned on for this chat.")
+            await event.reply("Mode Malam Telah Dihidupkan Untuk Obrolan Ini.")
     if "off" in input:
         if event.is_group:
             if not is_nightmode_indb(str(event.chat_id)):
                     await event.reply(
-                        "Night Mode is Already Off for this Chat"
+                        "Mode Malam Sudah Dimatikan Untuk Obrolan Ini"
                     )
                     return
         rmnightmode(str(event.chat_id))
-        await event.reply("NightMode Disabled!")
+        await event.reply("Mode Malam Dimatikan!")
     if not "off" in input and not "on" in input:
-        await event.reply("Please Specify On or Off!")
+        await event.reply("Mohon Masukkan kata kunci On atau Off!")
         return
 
 
@@ -131,7 +131,7 @@ async def job_close():
     for pro in chats:
         try:
             await tbot.send_message(
-              int(pro.chat_id), "12:00 Am, Group Is Closing Till 6 Am. Night Mode Started ! \n**Powered By @emiexrobot**"
+              int(pro.chat_id), "Pukul 00:00, Grup Saat ini Ditutup Hingga Pukul 06:00. Mode Malam Dimulai ! \n**Diatur Oleh @EikoManager_Bot**"
             )
             await tbot(
             functions.messages.EditChatDefaultBannedRightsRequest(
@@ -139,7 +139,7 @@ async def job_close():
             )
             )
         except Exception as e:
-            logger.info(f"Unable To Close Group {chat} - {e}")
+            logger.info(f"Tidak Dapat Menutup Grup {chat} - {e}")
 
 #Run everyday at 12am
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
@@ -153,7 +153,7 @@ async def job_open():
     for pro in chats:
         try:
             await tbot.send_message(
-              int(pro.chat_id), "06:00 Am, Group Is Opening.\n**Powered By @EikoRobot**"
+              int(pro.chat_id), "Pukul 06:00, Grup Telah Dibuka.\n**Diatur Oleh @EikoManger_Bot**"
             )
             await tbot(
             functions.messages.EditChatDefaultBannedRightsRequest(
@@ -161,7 +161,7 @@ async def job_open():
             )
         )
         except Exception as e:
-            logger.info(f"Unable To Open Group {pro.chat_id} - {e}")
+            logger.info(f"Tidak Dapat Membuka Grup {pro.chat_id} - {e}")
 
 # Run everyday at 06
 scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
