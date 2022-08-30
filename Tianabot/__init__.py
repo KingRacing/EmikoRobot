@@ -20,6 +20,10 @@ from inspect import getfullargspec
 
 StartTime = time.time()
 
+def get_user_list(__init__, key):
+    with open("{}/Tianabot/{}".format(os.getcwd(), __init__), "r") as json_file:
+        return json.load(json_file)[key]
+    
 # enable logging
 FORMAT = "[TianaBot] %(message)s"
 logging.basicConfig(
