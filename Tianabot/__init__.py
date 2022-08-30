@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import os
 import sys
@@ -8,6 +9,7 @@ import telegram.ext as tg
 from pyrogram import Client, errors
 from pymongo import MongoClient
 from telethon import TelegramClient
+from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
 from Python_ARQ import ARQ
 from aiohttp import ClientSession
