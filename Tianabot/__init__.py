@@ -223,7 +223,7 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
         
-from TianaBot.modules.sql import SESSION
+from Tianabot.modules.sql import SESSION
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
