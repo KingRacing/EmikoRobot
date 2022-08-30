@@ -222,6 +222,67 @@ else:
     except:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
+        
+from TianaBot.modules.sql import SESSION
+defaults = tg.Defaults(run_async=True)
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
+dispatcher = updater.dispatcher
+print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+try:
+    ubot2.start()
+except BaseException:
+    print("Userbot Error ! Have you added a STRING_SESSION in deploying??")
+    sys.exit(1)
+    
+pbot = Client(
+    ":memory:",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=TOKEN,
+    workers=min(32, os.cpu_count() + 4),
+)
+apps = []
+apps.append(pbot)
+
+async def get_entity(client, entity):
+    entity_client = client
+    if not isinstance(entity, Chat):
+        try:
+            entity = int(entity)
+        except ValueError:
+            pass
+        except TypeError:
+            entity = entity.id
+        try:
+            entity = await client.get_chat(entity)
+        except (PeerIdInvalid, ChannelInvalid):
+            for kp in apps:
+                if kp != client:
+                    try:
+                        entity = await kp.get_chat(entity)
+                    except (PeerIdInvalid, ChannelInvalid):
+                        pass
+                    else:
+                        entity_client = kp
+                        break
+            else:
+                entity = await kp.get_chat(entity)
+                entity_client = kp
+    return entity, entity_client
+
+
+async def eor(msg: Message, **kwargs):
+    func = msg.edit_text if msg.from_user.is_self else msg.reply
+    spec = getfullargspec(func.__wrapped__).args
+    return await func(**{k: v for k, v in kwargs.items() if k in spec})
+
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
