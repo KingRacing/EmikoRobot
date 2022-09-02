@@ -247,7 +247,7 @@ def start(update: Update, context: CallbackContext):
                     sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(
                  [
-                  [InlineKeyboardButton(text="📄 Sumber Kode", url="https://github.com/EmiliaTzy/EikoRobot"), 
+                  [InlineKeyboardButton(text="📄 Sumber Kode", url="https://xnxx.com"), 
                    InlineKeyboardButton(text="🫂 Support", url=f"https://t.me/{SUPPORT_CHAT}")]
                  ]
               ),
@@ -562,10 +562,10 @@ Terimakasih Lagi telah menggunakan saya
 /play [Balas ke Video atau Audio] atau [YT Link] atau [Nama Musik]  
 - Streaming Video atau Musik di Obrolan Suara dengan memilih Tombol sebaris yang Anda dapatkan
 
-✗ *Daftar Putar Tersimpan Database Eiko*:
+✗ *Daftar Putar Tersimpan Database Tohka*:
 
 /createplaylist
-- Buat Daftar Putar Anda di Server Eiko dengan Nama Kustom
+- Buat Daftar Putar Anda di Server Tohka dengan Nama Kustom
 
 /playlist 
 - Periksa Daftar Putar Tersimpan Anda Di Server.
@@ -574,7 +574,7 @@ Terimakasih Lagi telah menggunakan saya
 - Hapus semua musik yang disimpan di daftar putar Anda
 
 /playplaylist 
-- Mulai mainkan Daftar Putar Tersimpan Anda di Server Eiko.""",
+- Mulai mainkan Daftar Putar Tersimpan Anda di Server Tohka.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -627,7 +627,7 @@ Eiko memiliki fitur tambahan untuk pengguna non-admin yang ingin menggunakan per
 
 
 /start 
-- Mulai Eiko Music Bot.
+- Mulai Tohka Music Bot.
 
 /help 
 - Dapatkan Menu Pembantu Perintah dengan penjelasan rinci tentang perintah.
@@ -636,7 +636,7 @@ Eiko memiliki fitur tambahan untuk pengguna non-admin yang ingin menggunakan per
 - Dapatkan dasbor Pengaturan grup. Anda dapat mengelola Mode Pengguna Auth. Mode Perintah dari sini.
 
 /ping
-- Ping Bot dan periksa statistik Ram, Cpu dll dari Eiko.""",
+- Ping Bot dan periksa statistik Ram, Cpu dll dari Tohka.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="tiana_music")]]
@@ -709,14 +709,14 @@ Support
         )
     elif query.data == "tiana_source":
         query.message.edit_text(
-            text="""*EikoRobot Sekarang Proyek Bot Sumber Terbuka.*
+            text="""*TohkaRobot Sekarang Proyek Bot Sumber Terbuka.*
 
 *Klik Tombol di bawah ini untuk Mendapatkan Kode Sumber.*""",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="📄 𝗦𝘂𝗺𝗯𝗲𝗿", url="github.com/EmiliaTzy/EikoRobot"),                 
+                    InlineKeyboardButton(text="📄 𝗦𝘂𝗺𝗯𝗲𝗿", url="xnxx.com"),                 
                     InlineKeyboardButton(text="🔙 𝗞𝗲𝗺𝗯𝗮𝗹𝗶", callback_data="about_"),
                  ]    
                 ]
@@ -1058,7 +1058,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "𝐄𝐢𝐤𝐨𝐁𝐨𝐭 𝐁𝐞𝐫𝐡𝐚𝐬𝐢𝐥 𝐃𝐢𝐩𝐞𝐫𝐛𝐚𝐫𝐮𝐢✅")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Tohka𝐁𝐨𝐭 𝐁𝐞𝐫𝐡𝐚𝐬𝐢𝐥 𝐃𝐢𝐩𝐞𝐫𝐛𝐚𝐫𝐮𝐢✅")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
