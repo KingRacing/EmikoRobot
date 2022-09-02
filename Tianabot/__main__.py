@@ -104,7 +104,7 @@ buttons = [
         InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🫂", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [  
-        InlineKeyboardButton(text="➕️ 𝗧𝗮𝗺𝗯𝗮𝗵𝗸𝗮𝗻 𝘀𝗮𝘆𝗮 𝗸𝗲 𝗴𝗿𝘂𝗽𝗺𝘂 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+        InlineKeyboardButton(text="➕️ 𝗧𝗮𝗺𝗯𝗮𝗵𝗸𝗮𝗻 𝘀𝗮𝘆𝗮 𝗸𝗲 𝗴𝗿𝘂𝗽𝗺𝘂 ➕️", url=f"https://t.me/tohkaRobot?startgroup=true"),
     ], 
     
 ]
