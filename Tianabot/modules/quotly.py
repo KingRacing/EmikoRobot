@@ -30,13 +30,13 @@ from pyrogram.types import Message
 from Tianabot import pbot as app, arq
 from Tianabot.utils.errors import capture_err
 
-__mod_name__ = "Qᴜᴏᴛʟʏ"
+__mod_name__ = "Qᴜᴏᴛʟʏ 💬"
 __help__ = """
-/q - To quote a message.
-/q [INTEGER] - To quote more than 1 messages.
-/q r - to quote a message with it's reply
+/q - Mengutip pesan.
+/q [BINTANG] - Mengutip lebih dari 1 pesan.
+/q r - mengutip pesan dengan balasannya
 
-Use .q to quote using userbot
+Gunakan .q untuk mengutip menggunakan userbot
 """
 
 
