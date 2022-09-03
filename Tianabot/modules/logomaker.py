@@ -278,7 +278,7 @@ async def lego(event):
     draw.text((x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black")
     fname = "Tiana.png"
     img.save(fname, "png")
-    await telethn.send_file(event.chat_id, file=fname, caption = f"Made by [Tiana](@Tiana_prince_Bot)")         
+    await telethn.send_file(event.chat_id, file=fname, caption = f"Dibuat oleh [Tohka](@TohkaroBot)")         
     await pesan.delete()
     if os.path.exists(fname):
             os.remove(fname)
@@ -288,4 +288,4 @@ async def lego(event):
 __help__ = """
  - /logo <text> :  Create your logo with your name
  """
-__mod_name__ = "Lᴏɢᴏ"
+__mod_name__ = "Lᴏɢᴏ 🎇"
