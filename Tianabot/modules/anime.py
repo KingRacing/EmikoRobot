@@ -536,14 +536,14 @@ Get information about anime, manga or characters from [AniList](anilist.co).
 
 *Available commands:*
 
- ❍ /anime <anime>*:* returns information about the anime.
- ❍ /character <character>*:* returns information about the character.
- ❍ /manga <manga>*:* returns information about the manga.
- ❍ /user <user>*:* returns information about a MyAnimeList user.
- ❍ /upcoming*:* returns a list of new anime in the upcoming seasons.
- ❍ /kaizoku <anime>*:* search an anime on animekaizoku.com
- ❍ /kayo <anime>*:* search an anime on animekayo.com
- ❍ /airing <anime>*:* returns anime airing info.
+ ❍ /anime <anime>*:* mengembalikan informasi tentang anime.
+ ❍ /character <character>*:* mengembalikan informasi tentang karakter.
+ ❍ /manga <manga>*:* mengembalikan informasi tentang manga.
+ ❍ /user <user>*:* mengembalikan informasi tentang pengguna MyAnimeList.
+ ❍ /upcoming*:* menampilkan daftar anime baru di musim mendatang.
+ ❍ /kaizoku <anime>*:* cari anime di animekaizoku.com
+ ❍ /kayo <anime>*:* cari anime di animekayo.com
+ ❍ /airing <anime>*:* mengembalikan info penayangan anime..
 
 """
 
@@ -565,7 +565,7 @@ dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(UPCOMING_HANDLER)
 
-__mod_name__ = "Aɴɪᴍᴇ"
+__mod_name__ = "Aɴɪᴍᴇ 🧛‍♂️"
 __command_list__ = [
     "anime",
     "manga",
