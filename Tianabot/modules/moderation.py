@@ -22,27 +22,27 @@ def mod(update, context):
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!"
+            "Saya tidak tahu siapa yang Anda bicarakan, Anda harus menentukan user!"
         )
         return ""
     try:
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
-    if member.status == "administrator" or member.status == "creator":
+    if member.status == "administrator" or member.status == "pencipta":
         message.reply_text(
             "No need to Modertor an Admin!"
         )
         return ""
     if sql.is_modd(message.chat_id, user_id):
         message.reply_text(
-            f"[{member.user['first_name']}](tg://user?id={member.user['id']}) is already moderator in {chat_title}",
+            f"[{member.user['first_name']}](tg://user?id={member.user['id']}) sudah menjadi moderator di {chat_title}",
             parse_mode=ParseMode.MARKDOWN,
         )
         return ""
     sql.mod(message.chat_id, user_id)
     message.reply_text(
-        f"[{member.user['first_name']}](tg://user?id={member.user['id']}) has been moderator in {chat_title}",
+        f"[{member.user['first_name']}](tg://user?id={member.user['id']}) telah menjadi moderator di {chat_title}",
         parse_mode=ParseMode.MARKDOWN,
     )
     log_message = (
@@ -66,22 +66,22 @@ def dismod(update, context):
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!"
+            "Saya tidak tahu siapa yang Anda bicarakan, Anda harus menentukan pengguna!"
         )
         return ""
     try:
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
-    if member.status == "administrator" or member.status == "creator":
+    if member.status == "administrator" or member.status == "pencipta":
         message.reply_text("This Is User Admin")
         return ""
     if not sql.is_modd(message.chat_id, user_id):
-        message.reply_text(f"{member.user['first_name']} isn't moderator yet!")
+        message.reply_text(f"{member.user['first_name']} belum menjadi moderator!")
         return ""
     sql.dismod(message.chat_id, user_id)
     message.reply_text(
-        f"{member.user['first_name']} is no longer moderator in {chat_title}."
+        f"{member.user['first_name']} tidak lagi menjadi moderator di {chat_title}."
     )
     log_message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
@@ -104,7 +104,7 @@ def modd(update, context):
         member = chat.get_member(int(i.user_id))
         msg += f"{member.user['first_name']}\n"
     if msg.endswith("moderator.\n"):
-        message.reply_text(f"No users are Moderator in {chat_title}.")
+        message.reply_text(f"Tidak ada pengguna yang menjadi Moderator di {chat_title}.")
         return ""
     else:
         message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
@@ -118,24 +118,24 @@ def modr(update, context):
     member = chat.get_member(int(user_id))
     if not user_id:
         message.reply_text(
-            "I don't know who you're talking about, you're going to need to specify a user!"
+            "Saya tidak tahu siapa yang Anda bicarakan, Anda harus menentukan pengguna!"
         )
         return ""
     if sql.is_modd(message.chat_id, user_id):
         message.reply_text(
-            f"{member.user['first_name']} is an moderator user."
+            f"{member.user['first_name']} adalah pengguna moderator."
         )
     else:
         message.reply_text(
-            f"{member.user['first_name']} is not an moderator user."
+            f"{member.user['first_name']} bukan pengguna moderator."
         )
 
 __help__ = """
-*Commands*:
-  ➢ `/addmod`*:* moderator of a user. 
-  ➢ `/rmmod`*:* Unmoderator of a user.
-  ➢ `/modcheck`*:* moderation cheak of a user.
-  ➢ `/modlist`*:* moderation user list.
+*Perintah*:
+➢ /addmod*:* moderator pengguna.
+➢ /rmmod*:* Unmoderator pengguna.
+➢ /modcheck*:* cheak moderasi pengguna.
+➢ /modlist*:* daftar pengguna moderasi.
 """
 
 
@@ -148,7 +148,7 @@ dispatcher.add_handler(RMMOD)
 dispatcher.add_handler(MODLIST)
 dispatcher.add_handler(MODCHECK)
 
-__mod_name__ = "Mᴏᴅᴇʀᴀᴛɪᴏɴ"
+__mod_name__ = "Mᴏᴅᴇʀᴀᴛɪᴏɴ 👮‍♀"
 
 
 __command_list__ = ["addmod", "rmmod", "modlist", "modcheck"]
