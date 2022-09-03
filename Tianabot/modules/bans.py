@@ -399,26 +399,26 @@ def selfunban(context: CallbackContext, update: Update) -> str:
 
 
 __help__ = """
- ❍ /punchme*:* punchs the user who issued the command
+❍ /punchme*:* meninju pengguna yang mengeluarkan perintah
 
-*Admins only:*
- ❍ /ban <userhandle>*:* bans a user. (via handle, or reply)
- ❍ /sban <userhandle>*:* Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
- ❍ /tban <userhandle> x(m/h/d)*:* bans a user for `x` time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
- ❍ /unban <userhandle>*:* unbans a user. (via handle, or reply)
- ❍ /punch <userhandle>*:* Punches a user out of the group, (via handle, or reply)
+*Hanya Admin :*
+❍ /ban <userhandle>*:* mencekal pengguna. (melalui pegangan, atau balasan)
+❍ /sban <userhandle>*:* Diam-diam melarang pengguna. Menghapus perintah, Membalas pesan dan tidak membalas. (melalui pegangan, atau balasan)
+❍ /tban <userhandle> x(m/h/d)*:* mencekal pengguna selama x waktu. (melalui pegangan, atau balasan). m = menit, h = jam, d = hari.
+❍ /unban <userhandle>*:* membatalkan pemblokiran pengguna. (melalui pegangan, atau balasan)
+❍ /punch <userhandle>*:* Mengeluarkan pengguna dari grup, (melalui handle, atau reply)
 
-*FedBan or Fban Info:*
-Everything is fun, until a spammer starts entering your group, and you have to block it. Then you need to start banning more, and more, and it hurts.
-But then you have many groups, and you don't want this spammer to be in one of your groups - how can you deal? Do you have to manually block it, in all your groups?\n
-*No longer!* With Federation, you can make a ban in one chat overlap with all other chats.\n
-You can even designate federation admins, so your trusted admin can ban all the spammers from chats you want to protect.\n
+*Info FedBan atau Fban:*
+Semuanya menyenangkan, sampai spammer mulai memasuki grup Anda, dan Anda harus memblokirnya. Maka Anda harus mulai melarang lebih banyak, dan lebih banyak lagi, dan itu menyakitkan.
+Tapi kemudian Anda memiliki banyak grup, dan Anda tidak ingin spammer ini berada di salah satu grup Anda - bagaimana Anda bisa menanganinya? Apakah Anda harus memblokirnya secara manual, di semua grup Anda?\n
+*Tidak lagi!* Dengan Federasi, Anda dapat membuat larangan dalam satu obrolan tumpang tindih dengan semua obrolan lainnya.\n
+Anda bahkan dapat menunjuk admin federasi, sehingga admin tepercaya Anda dapat mencekal semua spammer dari chat yang ingin Anda lindungi.\n
 
-*Commands:*\n
-Feds are now divided into 3 sections for your ease. 
-❍ /fedownerhelp*:* Provides help for fed creation and owner only commands
-❍ /fedadminhelp*:* Provides help for fed administration commands
-❍ /feduserhelp*:* Provides help for commands anyone can use
+*Perintah:*\n
+FBI sekarang dibagi menjadi 3 bagian untuk kemudahan Anda.
+❍ /fedownerhelp*:* Memberikan bantuan untuk pembuatan feed dan perintah pemilik saja
+❍ /fedadminhelp*:* Memberikan bantuan untuk perintah administrasi makan
+❍ /feduserhelp*:* Memberikan bantuan untuk perintah yang dapat digunakan siapa saja
 """
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban)
