@@ -1018,38 +1018,38 @@ def user_button(update: Update, context: CallbackContext):
 
 
 WELC_HELP_TXT = (
-    "Your group's welcome/goodbye messages can be personalised in multiple ways. If you want the messages"
-    " to be individually generated, like the default welcome message is, you can use *these* variables:\n"
-    " • `{first}`*:* this represents the user's *first* name\n"
-    " • `{last}`*:* this represents the user's *last* name. Defaults to *first name* if user has no "
-    "last name.\n"
-    " • `{fullname}`*:* this represents the user's *full* name. Defaults to *first name* if user has no "
-    "last name.\n"
-    " • `{username}`*:* this represents the user's *username*. Defaults to a *mention* of the user's "
-    "first name if has no username.\n"
-    " • `{mention}`*:* this simply *mentions* a user - tagging them with their first name.\n"
-    " • `{id}`*:* this represents the user's *id*\n"
-    " • `{count}`*:* this represents the user's *member number*.\n"
-    " • `{chatname}`*:* this represents the *current chat name*.\n"
-    "\nEach variable MUST be surrounded by `{}` to be replaced.\n"
-    "Welcome messages also support markdown, so you can make any elements bold/italic/code/links. "
-    "Buttons are also supported, so you can make your welcomes look awesome with some nice intro "
-    "buttons.\n"
-    f"To create a button linking to your rules, use this: `[Rules](buttonurl://t.me/{dispatcher.bot.username}?start=group_id)`. "
-    "Simply replace `group_id` with your group's id, which can be obtained via /id, and you're good to "
-    "go. Note that group ids are usually preceded by a `-` sign; this is required, so please don't "
-    "remove it.\n"
-    "You can even set images/gifs/videos/voice messages as the welcome message by "
-    "replying to the desired media, and calling `/setwelcome`."
+    "Pesan selamat datang/perpisahan grup Anda dapat dipersonalisasi dalam berbagai cara. Jika Anda menginginkan pesannya"
+    " untuk dibuat satu per satu, seperti pesan selamat datang default, Anda dapat menggunakan variabel *ini*:\n"
+    " • {first}*:* ini mewakili *nama depan* pengguna\n"
+    " • {last}*:* ini mewakili *nama belakang* pengguna. Defaultnya adalah *nama depan* jika pengguna tidak memiliki "
+    "nama belakang.\n"
+    " • {fullname}*:* ini mewakili *nama lengkap* pengguna. Defaultnya adalah *nama depan* jika pengguna tidak memiliki "
+    "nama belakang.\n"
+    " • {username}*:* ini mewakili *nama pengguna* pengguna. Defaultnya adalah *menyebutkan* pengguna "
+    "nama depan jika tidak memiliki nama pengguna.\n"
+    " • {mention}*:* ini hanya *menyebut* pengguna - menandai mereka dengan nama depan mereka.\n"
+    " • {id}*:* ini mewakili *id*\n pengguna"
+    " • {count}*:* ini mewakili *nomor anggota* pengguna.\n"
+    " • {chatname}*:* ini mewakili *nama obrolan saat ini*.\n"
+    "\nSetiap variabel HARUS dikelilingi oleh {} untuk diganti.\n"
+    "Pesan sambutan juga mendukung penurunan harga, sehingga Anda dapat membuat elemen apa pun menjadi tebal/miring/kode/tautan."
+    "Tombol juga didukung, sehingga Anda dapat membuat sambutan Anda terlihat luar biasa dengan beberapa intro yang bagus"
+    "tombol.\n"
+    f"Untuk membuat tombol yang menautkan ke aturan Anda, gunakan ini: [Aturan](buttonurl://t.me/{dispatcher.bot.username}?start=group_id) "
+    "Cukup ganti group_id dengan id grup Anda, yang dapat diperoleh melalui /id, dan Anda siap untuk "
+    "pergi. Perhatikan bahwa id grup biasanya didahului dengan tanda -; ini wajib, jadi tolong jangan "
+    "hapus.\n"
+    "Anda bahkan dapat mengatur gambar/gif/video/pesan suara sebagai pesan selamat datang dengan "
+    "membalas ke media yang diinginkan, dan menelepon /setwelcome."
 )
 
 WELC_MUTE_HELP_TXT = (
-    "You can get the bot to mute new people who join your group and hence prevent spambots from flooding your group. "
-    "The following options are possible:\n"
-    "• `/welcomemute soft`*:* restricts new members from sending media for 24 hours.\n"
-    "• `/welcomemute strong`*:* mutes new members till they tap on a button thereby verifying they're human.\n"
-    "• `/welcomemute off`*:* turns off welcomemute.\n"
-    "*Note:* Strong mode kicks a user from the chat if they dont verify in 120seconds. They can always rejoin though"
+    "Anda bisa membuat bot untuk membisukan orang baru yang bergabung dengan grup Anda dan karenanya mencegah robot spam membanjiri grup Anda."
+    "Opsi berikut dimungkinkan:\n"
+    "• /welcomemute soft*:* membatasi anggota baru mengirim media selama 24 jam.\n"
+    "• /welcomemute strong*:* membisukan anggota baru hingga mereka mengetuk tombol untuk memverifikasi bahwa mereka adalah manusia.\n"
+    "• /welcomemute off*:* mematikan welcomemute.\n"
+    "*Catatan:* Mode kuat mengeluarkan pengguna dari obrolan jika mereka tidak memverifikasi dalam 120 detik. Mereka selalu dapat bergabung kembali"
 )
 
 
@@ -1093,23 +1093,22 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-*Admins only:*
- ❍ /welcome <on/off>*:* enable/disable welcome messages.
- ❍ /welcome*:* shows current welcome settings.
- ❍ /welcome noformat*:* shows current welcome settings, without the formatting - useful to recycle your welcome messages!
- ❍ /goodbye*:* same usage and args as `/welcome`.
- ❍ /setwelcome <sometext>*:* set a custom welcome message. If used replying to media, uses that media.
- ❍ /setgoodbye <sometext>*:* set a custom goodbye message. If used replying to media, uses that media.
- ❍ /resetwelcome*:* reset to the default welcome message.
- ❍ /resetgoodbye*:* reset to the default goodbye message.
- ❍ /cleanwelcome <on/off>*:* On new member, try to delete the previous welcome message to avoid spamming the chat.
- ❍ /welcomemutehelp*:* gives information about welcome mutes.
- ❍ /cleanservice <on/off*:* deletes telegrams welcome/left service messages. 
- *Example:*
-user joined chat, user left chat.
-
-*Welcome markdown:* 
- ❍ /welcomehelp*:* view more formatting information for custom welcome/goodbye messages.
+*Hanya Admin :*
+ ❍ /welcome <on/off>*:* mengaktifkan/menonaktifkan pesan selamat datang.
+ ❍ /welcome*:* menunjukkan pengaturan selamat datang saat ini.
+ ❍ /welcome noformat*:* menunjukkan pengaturan selamat datang saat ini, tanpa pemformatan - berguna untuk mendaur ulang pesan selamat datang Anda!
+ ❍ /goodbye*:* penggunaan dan argumen yang sama dengan /selamat datang.
+ ❍ /setwelcome <sometext>*:* mengatur pesan selamat datang khusus. Jika digunakan membalas media, gunakan media itu.
+ ❍ /setgoodbye <sometext>*:* mengatur pesan selamat tinggal khusus. Jika digunakan membalas media, gunakan media itu.
+ ❍ /resetwelcome*:* reset ke pesan selamat datang default.
+ ❍ /resetgoodbye*:* reset ke pesan selamat tinggal default.
+ ❍ /cleanwelcome <on/off>*:* Pada anggota baru, coba hapus pesan selamat datang sebelumnya untuk menghindari spam chat.
+ ❍ /welcomemutehelp*:* memberikan informasi tentang penyambutan bisu.
+ ❍ /cleanservice <on/off*:* menghapus pesan layanan selamat datang/kiri telegram.
+ *Contoh:*
+pengguna bergabung dengan obrolan, pengguna meninggalkan obrolan.
+*Selamat datang penurunan harga:*
+❍/welcomehelp*:* melihat lebih banyak informasi format untuk pesan selamat datang/selamat tinggal khusus.
 """
 
 NEW_MEM_HANDLER = MessageHandler(Filters.status_update.new_chat_members, new_member)
@@ -1144,7 +1143,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "Wᴇʟᴄᴏᴍᴇ"
+__mod_name__ = "Wᴇʟᴄᴏᴍᴇ 🤗"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
